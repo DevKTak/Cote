@@ -10,8 +10,8 @@ public class bj_01018 {
     public static int minCnt = 64;
 
     public static void main(String[] args) {
-        int N = scanner.nextInt(); // 세로 10
-        int M = scanner.nextInt(); // 가로 13
+        int N = scanner.nextInt(); // 세로
+        int M = scanner.nextInt(); // 가로
         arr = new boolean[N][M];
 
         scanner.nextLine();

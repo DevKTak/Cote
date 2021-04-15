@@ -7,7 +7,6 @@ import java.util.*;
 public class D {
     public static final Scanner scanner = new Scanner(System.in);
 
-
     public static long getGlobalPeriod(int n, long[] sizes)
     {
         long globalPeriod = sizes[0];

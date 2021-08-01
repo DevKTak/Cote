@@ -20,7 +20,7 @@ public class 문자열내마음대로정렬하기 {
           strings[i] = strings[j];
           strings[j] = temp;
         } else if (curChar == nextChar) {
-          if (strings[i].compareTo(strings[j]) > 0) {
+          if (strings[i].compareTo(strings[j]) > 0) { // string[i] > string[j] 보다 크면 양수, 같으면 0, 작으면 음수
             String temp = strings[i];
             strings[i] = strings[j];
             strings[j] = temp;

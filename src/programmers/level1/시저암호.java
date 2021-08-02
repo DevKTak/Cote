@@ -8,6 +8,8 @@ public class 시저암호 {
 
     StringBuilder sb = new StringBuilder();
 
+
+    /** 방법 1: **/
     for (int i = 0; i < s.length(); i++) {
       char ch = s.charAt(i);
 
@@ -20,6 +22,7 @@ public class 시저암호 {
       }
     }
 
+    /** 방법 2: **/
  /*   for (int i = 0; i < s.length(); i++) {
       if (s.charAt(i) == ' ') {
         sb.append(" ");

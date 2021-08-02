@@ -12,7 +12,6 @@ public class 약수의합 {
         sum += i;
       }
     }
-
     System.out.println(sum);
   }
 }

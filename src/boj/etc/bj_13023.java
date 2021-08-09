@@ -1,4 +1,4 @@
-package boj;
+package boj.etc;
 
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -12,6 +12,9 @@ class Edge {
   }
 }
 
+/**
+ * ABCDE
+ */
 public class bj_13023 {
 
   public static void main(String[] args) {

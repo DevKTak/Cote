@@ -28,7 +28,7 @@ public class 기능개발 {
       int curPoll = queue.peek();
       System.out.println("queue = " + queue);
 
-      if (preMaxPoll >= curPoll) { // 앞에 있는 기능이 배포될 때가지 배포 불가
+      if (preMaxPoll >= curPoll) { // 앞에 있는 기능이 배포될 때 까지 배포 불가
         cnt++;
         preMaxPoll = preMaxPoll > curPoll ? preMaxPoll : curPoll;
         queue.poll();

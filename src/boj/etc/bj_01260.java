@@ -8,7 +8,7 @@ import java.util.*;
 /**
  * DFS와 BFS
  */
-public class bj_1260 {
+public class bj_01260 {
 
   static ArrayList<Integer>[] adList; // 인접 리스트(Adjacency-list)
   static boolean[] checkArr; // 방문 여부

@@ -11,15 +11,16 @@ public class 타겟넘버 {
 
         타겟넘버 tn = new 타겟넘버();
 
-        tn.dfs(0, numbers, target, 0);
-        tn.dfs(0, numbers, target, 0);
+        tn.dfs(1, numbers, target, numbers[0]);
+        tn.dfs(1, numbers, target, -numbers[0]);
 
         System.out.println("dfsCnt = " + dfsCnt);
-        System.out.println("bfsCnt = " + bfsCnt);
+//        System.out.println("bfsCnt = " + bfsCnt);
     }
 
     public void dfs(int index, int[] numbers, int target, int sum) {
         if (index == numbers.length) {
+
             if (target == sum) {
                 dfsCnt++;
             }

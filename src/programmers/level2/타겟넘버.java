@@ -9,7 +9,6 @@ public class 타겟넘버 {
         int target = 3;
 
         타겟넘버 tn = new 타겟넘버();
-
         tn.dfs(0, numbers, target, 0);
         System.out.println("dfsCnt = " + dfsCnt);
     }

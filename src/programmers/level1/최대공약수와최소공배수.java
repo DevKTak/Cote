@@ -13,6 +13,7 @@ public class 최대공약수와최소공배수 {
     return new int[]{getGcd(n, m), n * m / getGcd(n, m)};
   }
 
+  // 유클리드 호제법 (최대공약수 구하기)
   private static int getGcd(int n, int m) {
     int big = Math.max(n, m);
     int small = Math.min(n, m);

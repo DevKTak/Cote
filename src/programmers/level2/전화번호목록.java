@@ -10,6 +10,25 @@ public class 전화번호목록 {
   }
 
   private static boolean solution(String[] phone_book) {
+    /**
+     * 시간초과 코드
+     */
+   /* for (int i = 0; i < phone_book.length; i++) {
+      for (int j = 0; j < phone_book.length; j++) {
+        int iLength = phone_book[i].length();
+        int jLength = phone_book[j].length();
+
+        if (jLength >= iLength && i != j) {
+          if (phone_book[j].substring(0, iLength).equals(phone_book[i].substring(0, iLength))) return false;
+        }
+      }
+    }
+
+    return true;*/
+
+    /**
+     * 해시맵 활용
+     */
     /*Map<String, String> map = new HashMap<>();
 
     for (String s : phone_book) {
@@ -24,6 +43,9 @@ public class 전화번호목록 {
 
     return true;*/
 
+    /**
+     * 해시셋 활용
+     */
     Set<String> set = new HashSet<>();
     set.addAll(Arrays.asList(phone_book));
 

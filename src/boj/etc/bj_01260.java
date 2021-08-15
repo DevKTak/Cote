@@ -71,7 +71,7 @@ public class bj_01260 {
     }
     System.out.println(Arrays.toString(adList)); // 인접 리스트 찍어보기
 
-    /** 각 리스트에 저장된 값 오름차순 정렬 (작은 숫자 정점부터 방문하기 위해) */
+    /** 각 리스트에 저장된 값 오름차순 정렬 (작은 숫자 정점부터 방문하라는 조건을 충족하기 위해) */
     for (int i = 1; i <= N; i++) {
       Collections.sort(adList[i]);
     }

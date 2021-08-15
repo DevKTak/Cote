@@ -1,5 +1,6 @@
 package cote.toss;
 
+// 테케 하나 탈락
 public class toss1 {
 
   public static void main(String[] args) {

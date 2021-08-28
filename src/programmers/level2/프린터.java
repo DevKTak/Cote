@@ -8,39 +8,52 @@ public class 프린터 {
   public static void main(String[] args) {
     int[] priorities = {2, 1, 9, 1, 9, 1};
     int location = 1;
-    System.out.println(solution(priorities, location)); // 4
+    프린터 printer = new 프린터();
+    System.out.println(printer.solution(priorities, location)); // 4
+
   }
 
-  private static int solution(int[] priorities, int location) {
-    Queue<Integer> queue = new LinkedList<>();
+  class Priority {
+    int priority;
+    int location;
 
-    for (int v : priorities) {
-      queue.add(v);
+    public Priority(int priority, int location) {
+      this.priority = priority;
+      this.location = location;
     }
+  }
 
-    while (true) {
-      int front = queue.peek();
-      boolean isGreaterThan = false;
+  private int solution(int[] priorities, int location) {
+    Queue<Priority> queue = new LinkedList<>();
 
-      for (int v : queue) {
-        if (front < v) {
-          queue.add(queue.poll());
-          isGreaterThan = true;
-          location--;
+    for (int i = 0; i < priorities.length; i++) {
+      queue.add(new Priority(priorities[i], i));
+    }
+    int index = 0;
 
-//          if (location < 0) {
-//            location += priorities.length;
-//          }
+    while (!queue.isEmpty()) {
+      Priority frontPriority = queue.poll();
+      boolean greaterThan = false;
+
+      for (Priority curPriority : queue) {
+        if (frontPriority.priority < curPriority.priority) {
+          greaterThan = true;
           break;
         }
       }
 
-      if (!isGreaterThan) {
-        break;
+      if (greaterThan) {
+        queue.add(frontPriority);
+      } else {
+        index++;
+
+        if (frontPriority.location == location) {
+          break;
+        }
       }
     }
 
-    return location < 0 ? priorities.length - 2 : location;
+    return index;
   }
 }
 

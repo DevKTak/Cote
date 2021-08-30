@@ -79,6 +79,7 @@ public class bj_01260 {
     checkArr = new boolean[N + 1]; // 0번 정점은 없기 때문에 N + 1 해준다
     dfs(V);
     System.out.println();
+
     checkArr = new boolean[N + 1];
     bfs(V);
     System.out.println();

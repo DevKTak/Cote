@@ -10,7 +10,6 @@ public class 프린터 {
     int location = 1;
     프린터 printer = new 프린터();
     System.out.println(printer.solution(priorities, location)); // 4
-
   }
 
   class Priority {

@@ -24,12 +24,12 @@ public class 게임맵최단거리 {
     }
   }
 
-  private static void bfs(int[][] maps, int[][] check, int i, int j, int n) {
+  private static void bfs(int[][] maps, int[][] check, int n, int m) {
     int[] dx = { -1, 1, 0 , 0 };
     int[] dy = { 0, 0, -1, 1 };
 
     Queue<Pair> q = new LinkedList<>();
-    q.add(new Pair(i, j));
+    q.add(new Pair(0, 0));
     check[0][0] = 1;
 
     while (!q.isEmpty()) {
@@ -39,7 +39,7 @@ public class 게임맵최단거리 {
         int nx = pair.x + dx[k];
         int ny = pair.y + dy[k];
 
-        if (0 <= nx && nx < n && 0 <= ny && ny < n) {
+        if (0 <= nx && nx < n && 0 <= ny && ny < m) {
           if (maps[nx][ny] == 1 && check[nx][ny] == 0) {
             q.add(new Pair(nx, ny));
             check[nx][ny] = check[pair.x][pair.y] + 1;
@@ -50,18 +50,13 @@ public class 게임맵최단거리 {
   }
 
   private static int solution(int[][] maps) {
-    int n = maps.length;
-    int[][] check = new int[n][n];
+    int n = maps.length; // 행
+    int m = maps[0].length; // 열
+    int[][] check = new int[n][m];
 
-    for (int i = 0; i < n; i++) {
-      for (int j = 0; j < n; j++) {
-        if (maps[i][j] == 1 && check[i][j] == 0) {
-          bfs(maps, check, i, j, n);
-        }
-      }
-    }
-    int answer = check[n - 1][n - 1];
+    bfs(maps, check, n, m);
+    int answer = check[n - 1][m - 1];
 
-    return answer > 0 ? answer : -1;
+    return answer > 1 ? answer : -1;
   }
 }

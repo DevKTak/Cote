@@ -12,9 +12,9 @@ public class 배달 {
     private int index;
     private int time;
 
-    public Node(int index, int distance) {
+    public Node(int index, int time) {
       this.index = index;
-      this.time = distance;
+      this.time = time;
     }
 
     public int getIndex() {

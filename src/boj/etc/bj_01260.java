@@ -10,6 +10,7 @@ import java.util.*;
  */
 public class bj_01260 {
 
+  // ArrayList 타입의 배열 []
   static ArrayList<Integer>[] adList; // 인접 리스트(Adjacency-list)
   static boolean[] checkArr; // 방문 여부
 

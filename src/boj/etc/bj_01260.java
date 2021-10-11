@@ -35,7 +35,7 @@ public class bj_01260 {
 
     while (!queue.isEmpty()) {
       int queueRemoveVal = queue.remove();
-      System.out.println(V + " ");
+      System.out.print(queueRemoveVal + " ");
 
       for (int ad : adList[queueRemoveVal]) {
         if (!checkArr[ad]) {

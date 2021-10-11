@@ -64,17 +64,17 @@ public class bj_01260_test {
 
   private static void bfs(int V) {
     Queue<Integer> queue = new LinkedList<>();
-    queue.add(V);
+    queue.offer(V);
     checkArr[V] = true;
 
     while (!queue.isEmpty()) {
-      Integer remove = queue.remove();
-      System.out.print(remove + " ");
+      Integer poll = queue.poll();
+      System.out.print(poll + " ");
 
-      for (int elm : adList.get(remove)) {
+      for (int elm : adList.get(poll)) {
         if (!checkArr[elm]) {
           checkArr[elm] = true;
-          queue.add(elm);
+          queue.offer(elm);
         }
       }
     }

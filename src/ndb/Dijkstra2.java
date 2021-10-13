@@ -5,6 +5,11 @@ import java.util.Arrays;
 import java.util.PriorityQueue;
 import java.util.Scanner;
 
+/**
+ * 다익스트라 알고리즘 시간복잡도 O(ElogV)
+ * E: 간선의 개수
+ * V: 노드의 개수
+ */
 class Node2 implements Comparable<Node2> {
 
   private int index;
@@ -75,7 +80,7 @@ public class Dijkstra2 {
       int dist = node.getDistance(); // 현재 노드까지의 비용
 
       // 현재 노드가 이미 처리된 적이 있는 노드라면 무시
-      // (현재 우선순위 큐에서 꺼낸 거리값이 테이블에 기록 된 거리값보다 크다면 무시
+      // === (현재 우선순위 큐에서 꺼낸 거리값이 테이블에 기록 된 거리값보다 크다면 무시
       // 갱신 할 필요 X
       if (d[now] < dist) continue;
 
@@ -131,6 +136,7 @@ public class Dijkstra2 {
     for (int i = 0; i < 10; i++) { // 최단 거리 테이블 배열 10개만 찍어보기
       System.out.print(d[i] + " ");
     }
+    System.out.println();
 
     // 다익스트라 알고리즘을 수행
     dijkstra(start);
@@ -146,7 +152,7 @@ public class Dijkstra2 {
         System.out.println(d[i]);
       }
     }
-
-    // 최단거리: 0, 2, 3, 1, 2, 4
+//             d[1] d[2] d[3] d[4] d[5] d[6]
+    // 최단거리: 0    2    3    1    2    4
   }
 }

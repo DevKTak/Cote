@@ -82,14 +82,14 @@ public class Dijkstra2 {
       // 현재 노드가 이미 처리된 적이 있는 노드라면 무시
       // === (현재 우선순위 큐에서 꺼낸 거리값이 테이블에 기록 된 거리값보다 크다면 무시
       // 갱신 할 필요 X
-      if (d[now] < dist) continue;
+      if (d[now] < dist) continue; // 우선순위큐를 활용하는 이유 인 것 같음
 
       // 현재 노드와 연결된 다른 인접한 노드들을 확인
       for (int i = 0; i < graph.get(now).size(); i++) {
         int cost = d[now] + graph.get(now).get(i).getDistance(); // 현재 노드까지의 거리 + 현재노드에서 인접 노드까지의 거리
         int adjacentNode = graph.get(now).get(i).getIndex();
 
-        // 현재 노드를 거쳐서, 다른 노드로 이동하는 거리가
+        // 현재 노드를 거쳐서, 다른 노드로 이동하는 거리(합친 거리)가
         // 인접노드번호 현재 최단거리 테이블에 기록 된 거리값 보다 더 짧은 경우
         if (cost < d[adjacentNode]) { // 갱신 여부 판단
           d[adjacentNode] = cost; // 더 최단 거리로 갱신

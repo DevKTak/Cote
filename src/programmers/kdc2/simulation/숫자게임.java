@@ -1,7 +1,6 @@
-package programmers.kdc.simulation;
+package programmers.kdc2.simulation;
 
 import java.util.Arrays;
-import java.util.Collections;
 
 public class 숫자게임 {
 

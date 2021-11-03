@@ -1,6 +1,4 @@
-package programmers.kdc.greedy;
-
-import java.util.Arrays;
+package programmers.kdc2.greedy;
 
 public class 기지국설치 {
 

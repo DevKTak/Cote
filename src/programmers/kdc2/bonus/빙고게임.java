@@ -1,4 +1,4 @@
-package programmers.kdc.bonus;
+package programmers.kdc2.bonus;
 
 import java.util.Arrays;
 

@@ -1,4 +1,4 @@
-package programmers.kdc.binarySearch;
+package programmers.kdc2.binarySearch;
 
 import java.util.stream.IntStream;
 
@@ -21,7 +21,6 @@ public class 예산 {
 
   private static int solution(int[] budgets, int M) {
     int min = 0;
-
     int max = IntStream.of(budgets).max().orElse(0); // return Optional(Int)
     /*int max = Integer.MIN_VALUE;
 
@@ -38,17 +37,16 @@ public class 예산 {
       int sum = IntStream.of(budgets)
         .map(v -> Math.min(v, mid))
         .sum();
-
       /*int sum = 0;
       for (int v : budgets) {
         sum += Math.min(v, mid);
       }*/
 
       if (sum <= M) {
-        min++;
+        min = mid + 1;
         answer = mid;
       } else {
-        max--;
+        max = mid - 1;
       }
     }
 

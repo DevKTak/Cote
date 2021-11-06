@@ -25,11 +25,12 @@ public class 게임맵최단거리 {
   }
 
   private static void bfs(int[][] maps, int[][] check, int n, int m) {
-    int[] dx = { -1, 1, 0 , 0 };
-    int[] dy = { 0, 0, -1, 1 };
+    int[] dx = { -1, 1, 0 , 0 }; // 행
+    int[] dy = { 0, 0, -1, 1 }; // 열
 
+    // 최초 셋팅
     Queue<Pair> q = new LinkedList<>();
-    q.add(new Pair(0, 0));
+    q.offer(new Pair(0, 0));
     check[0][0] = 1;
 
     while (!q.isEmpty()) {
@@ -39,9 +40,9 @@ public class 게임맵최단거리 {
         int nx = pair.x + dx[k];
         int ny = pair.y + dy[k];
 
-        if (0 <= nx && nx < n && 0 <= ny && ny < m) {
-          if (maps[nx][ny] == 1 && check[nx][ny] == 0) {
-            q.add(new Pair(nx, ny));
+        if (0 <= nx && nx < n && 0 <= ny && ny < m) { // maps 배열 범위 안에 속하는지 검사
+          if (maps[nx][ny] == 1 && check[nx][ny] == 0) { // 벽이 아니면서 방문하지 않은 곳
+            q.offer(new Pair(nx, ny));
             check[nx][ny] = check[pair.x][pair.y] + 1;
           }
         }

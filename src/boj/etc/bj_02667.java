@@ -40,7 +40,7 @@ public class bj_02667 {
         int ny = pair.y + dy[k];
 
         if (0 <= nx && nx < n && 0 <= ny && ny < n) { // maps 배열 범위 안에 속하는지 검사
-          if (maps[nx][ny] == 1 && group[nx][ny] == 0) { // 집이 있는곳(1) 이면서 단지번호가 붙지 않은곳
+          if (maps[nx][ny] == 1 && group[nx][ny] == 0) { // 집이 있는곳(1) 이면서 단지번호가 붙지 않은 곳
             q.add(new Pair(nx, ny));
             group[nx][ny] = groupNum;
           }

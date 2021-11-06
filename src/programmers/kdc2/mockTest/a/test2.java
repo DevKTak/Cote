@@ -15,6 +15,7 @@ public class test2 {
     Arrays.sort(aArr);
     Arrays.sort(bArr);
 
-    return Arrays.toString(aArr).equals(Arrays.toString(bArr));
+//    return Arrays.toString(aArr).equals(Arrays.toString(bArr));
+    return Arrays.equals(aArr, bArr);
   }
 }

@@ -25,6 +25,7 @@ public class 게임맵최단거리 {
   }
 
   private static void bfs(int[][] maps, int[][] check, int n, int m) {
+    // 상, 하, 좌, 우
     int[] dx = { -1, 1, 0 , 0 }; // 행
     int[] dy = { 0, 0, -1, 1 }; // 열
 

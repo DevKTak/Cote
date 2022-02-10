@@ -9,7 +9,7 @@ public class 두개뽑아서더하기 {
   public static void main(String[] args) {
     int[] numbers = new int[]{2,1,3,4,1};
 
-    Set<Integer> set = new TreeSet<>();
+    Set<Integer> set = new TreeSet<>(); // 중복x 이면서 오름차순 정렬 되서 TreeSet으로 결정
 
     for (int i = 0; i < numbers.length - 1; i++) {
       for (int j = i + 1; j < numbers.length; j++) {
@@ -26,6 +26,6 @@ public class 두개뽑아서더하기 {
       System.out.println(val);
     }
 
-    System.out.println(Arrays.toString(result));
+//    System.out.println(Arrays.toString(result));
   }
 }

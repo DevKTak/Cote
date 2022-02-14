@@ -5,9 +5,9 @@ import java.util.StringTokenizer;
 
 /**
  * 덩치
- * 14584KB
- * 144ms
- * 959B
+ * 14584 KB
+ * 144 ms
+ * 959 B
  */
 public class boj_07568 {
 

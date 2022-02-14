@@ -2,6 +2,12 @@ package boj.class2;
 
 import java.util.Scanner;
 
+/**
+ * 블랙잭
+ * 17688KB
+ * 240ms
+ * 835B
+ */
 public class bj_02798 {
 
     public static final Scanner scanner = new Scanner(System.in);
@@ -14,22 +20,20 @@ public class bj_02798 {
         for (int i = 0; i < T; i++) {
             arr[i] = scanner.nextInt();
         }
-
         int maxSum = Integer.MIN_VALUE;
-        int temp = 0;
+        int tempSum = 0;
 
         for (int i = 0; i < arr.length - 2; i++) {
             for (int j = i + 1; j < arr.length - 1; j++) {
                 for (int k = j + 1; k < arr.length; k++) {
-                    temp = arr[i] + arr[j] + arr[k];
+                    tempSum = arr[i] + arr[j] + arr[k];
 
-                    if (temp <= N && temp > maxSum) {
-                        maxSum = temp;
+                    if (tempSum <= N && tempSum > maxSum) {
+                        maxSum = tempSum;
                     }
                 }
             }
         }
-
         System.out.println(maxSum);
     }
 }

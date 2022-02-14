@@ -2,6 +2,7 @@ package boj.class2;
 
 import java.util.Scanner;
 
+/** 분해합 */
 public class bj_02231 {
 
     public static final Scanner scanner = new Scanner(System.in);
@@ -19,7 +20,6 @@ public class bj_02231 {
             while (tempI != 0) {
                 sum += tempI % 10;
                 tempI /= 10;
-
             }
 
             if (sum == N) {
@@ -27,7 +27,6 @@ public class bj_02231 {
                 break;
             }
         }
-
         System.out.println(answer);
     }
 }

@@ -2,6 +2,7 @@ package boj.class2;
 
 import java.util.*;
 
+/** 단어 정렬 */
 public class bj_01181 {
 
     static final Scanner scanner = new Scanner(System.in);
@@ -27,7 +28,7 @@ public class bj_01181 {
         Arrays.sort(arr, new Comparator<String>() {
             @Override
             public int compare(String s, String t1) {
-                if (s.length() == t1.length()) { // 길이가 같을 경우
+                if (s.length() == t1.length()) { // 2번 조건: 길이가 같을 경우 사전순
                     /**
                      * 1. t1이 s에 포함되어있는 문자열일 경우
                      *    s 길이 - t1 길이 리턴
@@ -38,16 +39,24 @@ public class bj_01181 {
                      *    대소문자 무시하려면 compareToIgnorecase() 사용
                      */
                     return s.compareTo(t1); // 사전순 정렬
-                } else { // 그 외
-                    return s.length() - t1.length(); // 양수: 위치바꿈, 0 or 음수: 바뀌지않음
+                } else { // 1번 조건: 길이가 짧은 것 부터
+//                    return s.length() - t1.length(); // 양수: 위치바꿈, 0 or 음수: 바뀌지않음
+                    if (s.length() > t1.length()) {
+                        return 1;
+                    } else if (s.length() == t1.length()) {
+                        return 0;
+                    } else {
+                        return -1;
+                    }
                 }
+
+
             }
         });
 
         for (String s : arr) {
             System.out.println(s);
         }
-
     }
 }
 

@@ -19,6 +19,7 @@ public class boj_01436 {
 
         while (N != cnt) {
             result++;
+
             if (String.valueOf(result).contains("666")) cnt++;
         }
         System.out.println(result);

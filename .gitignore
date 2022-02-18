@@ -35,4 +35,4 @@ build/
 ### tak ###
 Icon?
 *.jar
-out/*
+out/

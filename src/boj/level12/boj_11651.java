@@ -42,11 +42,12 @@ public class boj_11651 {
       if (this.y > location.y) {
         return 1;
       } else if (this.y == location.y) {
-        if (this.x > location.x) {
-          return 1;
-        } else {
-          return -1;
-        }
+        return (this.x > location.x) ? 1 : -1;
+//        if (this.x > location.x) {
+//          return 1;
+//        } else {
+//          return -1;
+//        }
       } else {
         return -1;
       }

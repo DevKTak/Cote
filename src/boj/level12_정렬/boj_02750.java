@@ -1,10 +1,9 @@
-package boj.level12;
+package boj.level12_정렬;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.Arrays;
-import java.util.StringTokenizer;
 
 /**
  * 수 정렬하기

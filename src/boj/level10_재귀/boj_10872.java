@@ -1,8 +1,10 @@
-package boj.level10;
+package boj.level10_재귀;
 
 import java.util.Scanner;
 
-/** 팩토리얼 */
+/**
+ * 팩토리얼
+ */
 public class boj_10872 {
 
     public static void main(String[] args) {

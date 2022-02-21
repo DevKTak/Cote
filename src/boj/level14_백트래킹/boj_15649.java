@@ -1,4 +1,4 @@
-package boj.level14;
+package boj.level14_백트래킹;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -8,7 +8,7 @@ import java.util.StringTokenizer;
 /**
  * N과 M (1)
  */
-public class boj_15649_2 {
+public class boj_15649 {
 
     public static int N;
     public static int M;
@@ -23,14 +23,15 @@ public class boj_15649_2 {
         N = Integer.parseInt(st.nextToken()); // 1 ~ N 까지 자연수 중
         M = Integer.parseInt(st.nextToken()); // M 개를 고른다
 
-        arr = new int[M]; // 한 줄씩 찍을 임시 저장 배열
-        visit = new boolean[N]; // 노드 방문 체크
+        arr = new int[M];
+        visit = new boolean[N];
 
         dfs(0);
         System.out.println(sb);
     }
 
     private static void dfs(int depth) {
+        // 출력
         if (depth == M) {
             for (int v : arr) {
                 sb.append(v).append(" ");
@@ -39,13 +40,14 @@ public class boj_15649_2 {
             return;
         }
 
-
         for (int i = 0; i < N; i++) {
-            if (!visit[i]) { // 방문 한적이 없는 경우
-                visit[i] = true;
+            if (!visit[i]) { // 방문한 적이 없으면 (노드 중복방지)
+                visit[i] = true; //  방문처리
                 arr[depth] = i + 1;
 
                 dfs(depth + 1);
+
+                // 자식노드 방문이 끝나고 돌아오면 방문노드를 방문하지 않은 상태로 변경
                 visit[i] = false;
             }
         }

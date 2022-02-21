@@ -1,4 +1,4 @@
-package boj.level12;
+package boj.level12_정렬;
 
 import java.util.Arrays;
 import java.util.Comparator;

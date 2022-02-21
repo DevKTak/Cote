@@ -30,7 +30,7 @@ public class bj_01260 {
   /** bfs 로직 */
   private static void bfs(int V) {
     Queue<Integer> queue = new LinkedList<>();
-    queue.add(V);
+    queue.offer(V);
     checkArr[V] = true;
 
     while (!queue.isEmpty()) {

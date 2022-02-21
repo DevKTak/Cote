@@ -1,8 +1,10 @@
-package boj.level10;
+package boj.level10_재귀;
 
 import java.util.Scanner;
 
-/** 피보나치 수 5 */
+/**
+ * 피보나치 수 5
+ */
 public class boj_10870 {
 
 

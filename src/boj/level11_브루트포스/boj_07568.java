@@ -1,4 +1,4 @@
-package boj.level11;
+package boj.level11_브루트포스;
 
 import java.io.*;
 import java.util.StringTokenizer;

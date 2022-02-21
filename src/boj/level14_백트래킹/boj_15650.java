@@ -1,4 +1,4 @@
-package boj.level14;
+package boj.level14_백트래킹;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -6,9 +6,9 @@ import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
 /**
- * N과 M (3)
+ * N과 M (2)
  */
-public class boj_15651 {
+public class boj_15650 {
 
     public static int N;
     public static int M;
@@ -23,11 +23,11 @@ public class boj_15651 {
         M = Integer.parseInt(st.nextToken());
         arr = new int[M];
 
-        dfs( 0);
+        dfs(1, 0);
         System.out.print(sb);
     }
 
-    private static void dfs(int depth) {
+    private static void dfs(int ascNum, int depth) {
         if (depth == M) {
             for (int val : arr) {
                 sb.append(val).append(" ");
@@ -36,10 +36,10 @@ public class boj_15651 {
             return;
         }
 
-        for (int i = 0; i < N; i++) {
-            arr[depth] = i + 1;
+        for (int i = ascNum; i <= N; i++) {
+            arr[depth] = i;
 
-            dfs(depth + 1);
+            dfs(i + 1, depth + 1);
         }
     }
 }

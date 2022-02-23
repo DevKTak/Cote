@@ -17,7 +17,7 @@ public class boj_01472 {
         // 방법 1
         desc(sArr);
 
-        // 방법 2
+        // 방법 2 Counting Sort(카운팅 정렬)
         countingSort(Integer.parseInt(s));
 
     }

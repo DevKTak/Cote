@@ -13,6 +13,10 @@ import java.util.List;
  * Tim Sort 사용
  * Hybrid sorting algorithm = 합병정렬 + 삽입정렬
  * O(n) ~ O(nlogn)
+ *
+ * 164500 KB
+ * 1540 ms
+ * 891 B
  */
 public class boj_02751 {
 

@@ -10,6 +10,10 @@ import java.util.Arrays;
  * Arrays.sort(Array)
  * dual-pivot Quick Sort 알고리즘 사용
  * 평균: O(nlogn), 최악: O(n²)
+ *
+ * 14968 KB
+ * 184 ms
+ * 768 B
  */
 public class boj_02750 {
 

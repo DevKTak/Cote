@@ -64,6 +64,7 @@ public class bj_02667 {
         maps[i][j] = s.charAt(j) - '0';
       }
     }
+
     int groupNum = 0;
     int[][] group = new int[n][n]; // 단지들의 그룹 구분
 
@@ -74,8 +75,8 @@ public class bj_02667 {
         }
       }
     }
-    int answer[] = new int[groupNum];
 
+    int[] answer = new int[groupNum];
     for (int i = 0; i < n; i++) {
       for (int j = 0; j < n; j++) {
         if (group[i][j] != 0) {

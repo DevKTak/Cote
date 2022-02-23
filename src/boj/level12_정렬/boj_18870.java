@@ -9,7 +9,7 @@ import java.util.Map;
 import java.util.StringTokenizer;
 
 /**
- * 좌표 압축
+ * 좌표 압축 (순위(Rank))
  */
 public class boj_18870 {
 

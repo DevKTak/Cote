@@ -55,7 +55,7 @@ public class boj_01697 {
                     return;
                 }
 
-                // check[sum] == 0 이전에 방문한 이력이 없는지 검사가 안하면 메모리초과!
+                // check[sum] == 0 이전에 방문한 이력이 없는지 검사 안하면 메모리초과!
                 if (0 <= sum && sum < check.length && check[sum] == 0) {
                     queue.offer(sum);
                     check[sum] = check[cur] + 1;

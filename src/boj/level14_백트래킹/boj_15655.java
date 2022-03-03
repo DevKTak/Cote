@@ -29,8 +29,6 @@ public class boj_15655 {
         tempArr = new int[M];
         visited = new boolean[N];
 
-
-
         for (int i = 0; i < N; i++) {
             arr[i] = Integer.parseInt(st.nextToken());
         }
@@ -53,11 +51,11 @@ public class boj_15655 {
 
         for (int i = asc; i < arr.length; i++) {
             if (!visited[i]) {
+
                 visited[i] = true;
                 tempArr[depth] = arr[i];
 
                 dfs(depth + 1, i + 1);
-
                 visited[i] = false;
             }
         }

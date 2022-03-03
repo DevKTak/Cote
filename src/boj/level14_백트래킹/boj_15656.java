@@ -12,7 +12,6 @@ import java.util.StringTokenizer;
 public class boj_15656 {
 
     private static int[] arr, tempArr;
-    private static boolean[] visited;
     private static int N, M;
     private static StringBuilder sb = new StringBuilder();
 
@@ -27,9 +26,6 @@ public class boj_15656 {
         st = new StringTokenizer(br.readLine());
         arr = new int[N];
         tempArr = new int[M];
-        visited = new boolean[N];
-
-
 
         for (int i = 0; i < N; i++) {
             arr[i] = Integer.parseInt(st.nextToken());

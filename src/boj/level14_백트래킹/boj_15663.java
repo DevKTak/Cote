@@ -7,13 +7,14 @@ import java.util.Arrays;
 import java.util.StringTokenizer;
 
 /**
- * N과 M (5)
+ * N과 M (9)
  */
-public class boj_15654 {
+public class boj_15663 {
 
     private static int[] arr, tempArr;
     private static boolean[] visited;
     private static int N, M;
+    private static int distinctTemp = -1;
     private static StringBuilder sb = new StringBuilder();
 
 
@@ -52,10 +53,13 @@ public class boj_15654 {
         for (int i = 0; i < arr.length; i++) {
             if (!visited[i]) {
                 visited[i] = true;
-                tempArr[depth] = arr[i];
+
+//                if (distinctTemp == arr[i]) {
+//                    continue;
+//                }
+                distinctTemp = tempArr[depth] = arr[i];
 
                 dfs(depth + 1);
-
                 visited[i] = false;
             }
         }

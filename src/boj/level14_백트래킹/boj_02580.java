@@ -70,6 +70,7 @@ public class boj_02580 {
 
     // 빈 칸에 들어갈 수 있는 값이 맞는지 여부
     private static boolean possible(int row, int col, int value) {
+
         // 열 검사 (세로)
         for (int i = 0; i < 9; i++) {
             if (arr[i][col] == value) {

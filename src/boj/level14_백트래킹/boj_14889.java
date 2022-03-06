@@ -7,6 +7,10 @@ import java.util.StringTokenizer;
 
 /**
  * 스타트와 링크
+ *
+ * 20800 KB
+ * 312 ms
+ * 2242 B
  */
 public class boj_14889 {
 

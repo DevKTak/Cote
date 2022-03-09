@@ -11,7 +11,7 @@ import java.util.List;
  * 수 정렬하기 2
  * Collection.sort(List)
  * Tim Sort 사용
- * Hybrid sorting algorithm = 합병정렬 + 삽입정렬
+ * Hybrid sorting algorithm = 합병정렬(merge sort) + 삽입정렬(insertion sort)
  * O(n) ~ O(nlogn)
  *
  * 164500 KB

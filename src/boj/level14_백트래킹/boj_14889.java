@@ -71,12 +71,14 @@ public class boj_14889 {
         int teamStart = 0;
         int teamLink = 0;
 
-        for (int i = 0; i < N; i++) {
-            for (int j = 0; j < N; j++) {
+        for (int i = 0; i < N - 1; i++) {
+            for (int j = i; j < N; j++) {
                 if (visited[i] && visited[j]) {
                     teamStart += arr[i][j];
+                    teamStart += arr[j][i];
                 } else if (!visited[i] && !visited[j]) {
                     teamLink += arr[i][j];
+                    teamLink += arr[j][i];
                 }
             }
         }
@@ -90,21 +92,3 @@ public class boj_14889 {
         min = Math.min(min, difference);
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

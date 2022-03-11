@@ -12,7 +12,7 @@ import java.util.StringTokenizer;
  * 312 ms
  * 2242 B
  */
-public class boj_14889 {
+public class boj_14889_스타트와링크 {
 
     private static int N;
     private static int[][] arr;

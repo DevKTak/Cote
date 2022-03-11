@@ -8,7 +8,7 @@ import java.util.StringTokenizer;
 /**
  * N과 M (2)
  */
-public class boj_15650 {
+public class boj_15650_N과M2 {
 
     public static int N;
     public static int M;

@@ -12,7 +12,7 @@ import java.util.StringTokenizer;
  * 556 ms
  * 2623 B
  */
-public class boj_02580 {
+public class boj_02580_스도쿠 {
 
     private static int[][] arr;
 

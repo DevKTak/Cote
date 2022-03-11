@@ -10,7 +10,7 @@ import java.util.StringTokenizer;
 /**
  * N과 M (10)
  */
-public class boj_15664 {
+public class boj_15664_N과M10 {
 
     private static int N, M;
     private static int[] arr, tempArr;

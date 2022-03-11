@@ -7,9 +7,9 @@ import java.util.Arrays;
 import java.util.StringTokenizer;
 
 /**
- * N과 M (8)
+ * N과 M (7)
  */
-public class boj_15657 {
+public class boj_15656_N과M7 {
 
     private static int[] arr, tempArr;
     private static int N, M;
@@ -32,11 +32,11 @@ public class boj_15657 {
         }
         Arrays.sort(arr);
 
-        dfs(0, 0);
+        dfs(0);
         System.out.println(sb);
     }
 
-    private static void dfs(int depth, int asc) {
+    private static void dfs(int depth) {
 
         // Base condition
         if (depth == M) {
@@ -47,10 +47,10 @@ public class boj_15657 {
             return;
         }
 
-        for (int i = asc; i < arr.length; i++) {
+        for (int i = 0; i < arr.length; i++) {
             tempArr[depth] = arr[i];
 
-            dfs(depth + 1, i);
+            dfs(depth + 1);
         }
     }
 }

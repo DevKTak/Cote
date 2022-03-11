@@ -7,7 +7,7 @@ import java.io.InputStreamReader;
 /**
  * N-Queen
  */
-public class boj_09663 {
+public class boj_09663_N_Queen {
 
     public static int[] arr;
     public static int N;

@@ -12,7 +12,7 @@ import java.util.StringTokenizer;
  * 140 ms
  * 2026 B
  */
-public class boj_14888 {
+public class boj_14888_연산자끼워넣기 {
 
     private static int N;
     private static int[] num;

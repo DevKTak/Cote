@@ -7,12 +7,11 @@ import java.util.Arrays;
 import java.util.StringTokenizer;
 
 /**
- * N과 M (5)
+ * N과 M (8)
  */
-public class boj_15654 {
+public class boj_15657_N과M8 {
 
     private static int[] arr, tempArr;
-    private static boolean[] visited;
     private static int N, M;
     private static StringBuilder sb = new StringBuilder();
 
@@ -27,18 +26,17 @@ public class boj_15654 {
         st = new StringTokenizer(br.readLine());
         arr = new int[N];
         tempArr = new int[M];
-        visited = new boolean[N];
 
         for (int i = 0; i < N; i++) {
             arr[i] = Integer.parseInt(st.nextToken());
         }
         Arrays.sort(arr);
 
-        dfs(0);
+        dfs(0, 0);
         System.out.println(sb);
     }
 
-    private static void dfs(int depth) {
+    private static void dfs(int depth, int asc) {
 
         // Base condition
         if (depth == M) {
@@ -49,15 +47,10 @@ public class boj_15654 {
             return;
         }
 
-        for (int i = 0; i < arr.length; i++) {
-            if (!visited[i]) {
-                visited[i] = true;
-                tempArr[depth] = arr[i];
+        for (int i = asc; i < arr.length; i++) {
+            tempArr[depth] = arr[i];
 
-                dfs(depth + 1);
-
-                visited[i] = false;
-            }
+            dfs(depth + 1, i);
         }
     }
 }

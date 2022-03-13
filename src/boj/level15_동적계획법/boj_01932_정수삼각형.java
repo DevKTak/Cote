@@ -43,7 +43,7 @@ public class boj_01932_정수삼각형 {
 
     private static int getSumTopDown(int depth, int col) {
 
-        // Base Condition
+        // Initial Value
         if (depth == n - 1) { // 값이 들어있는 맨 아래행 일 경우 리턴
             return dp[depth][col];
         }

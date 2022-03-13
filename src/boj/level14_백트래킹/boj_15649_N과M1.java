@@ -8,6 +8,7 @@ import java.util.StringTokenizer;
 /**
  * N과 M (1)
  */
+
 public class boj_15649_N과M1 {
 
     public static int N;
@@ -20,8 +21,8 @@ public class boj_15649_N과M1 {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st = new StringTokenizer(br.readLine());
 
-        N = Integer.parseInt(st.nextToken()); // 1 ~ N 까지 자연수 중
-        M = Integer.parseInt(st.nextToken()); // M 개를 고른다
+        N = Integer.parseInt(st.nextToken()); // 1 ~ N까지 자연수 중
+        M = Integer.parseInt(st.nextToken()); // M개를 고른다
 
         arr = new int[M];
         visit = new boolean[N];
@@ -41,7 +42,7 @@ public class boj_15649_N과M1 {
         }
 
         for (int i = 0; i < N; i++) {
-            if (!visit[i]) { // 방문한 적이 없으면 (노드 중복방지)
+            if (!visit[i]) { // 방문한 적이 없으면(노드 중복방지)
                 visit[i] = true; //  방문처리
                 arr[depth] = i + 1;
 

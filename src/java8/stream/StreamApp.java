@@ -1,4 +1,6 @@
-package java8.test2;
+package java8.stream;
+
+import java8.OnlineClass;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -7,7 +9,7 @@ import java.util.function.Predicate;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-public class App {
+public class StreamApp {
 
     public static void main(String[] args) {
         List<OnlineClass> springClasses = new ArrayList<>();

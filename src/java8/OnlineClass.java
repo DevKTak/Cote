@@ -49,4 +49,14 @@ public class OnlineClass {
     public void setProgress(Progress progress) {
         this.progress = progress;
     }
+
+    @Override
+    public String toString() {
+        return "OnlineClass{" +
+                "id=" + id +
+                ", title='" + title + '\'' +
+                ", closed=" + closed +
+                ", progress=" + progress +
+                '}';
+    }
 }

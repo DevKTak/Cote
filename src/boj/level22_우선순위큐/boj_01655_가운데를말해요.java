@@ -20,21 +20,15 @@ public class boj_01655_가운데를말해요 {
             int num = Integer.parseInt(br.readLine());
 
             if (descPQ.size() == ascPQ.size()) {
-                if (!ascPQ.isEmpty() && ascPQ.peek() < num) {
-                    int temp = ascPQ.remove();
-                    ascPQ.offer(num);
-                    descPQ.offer(temp);
-                } else {
-                    descPQ.offer(num);
-                }
+                descPQ.offer(num);
             } else {
-                if (!descPQ.isEmpty() && descPQ.peek() > num) {
-                    int temp = descPQ.remove();
-                    descPQ.offer(num);
-                    ascPQ.offer(temp);
-                } else {
-                    ascPQ.offer(num);
-                }
+                ascPQ.offer(num);
+            }
+
+            if (!descPQ.isEmpty() && !ascPQ.isEmpty() && (descPQ.peek() > ascPQ.peek())) {
+                int temp = ascPQ.poll();
+                ascPQ.offer(descPQ.poll());
+                descPQ.offer(temp);
             }
             sb.append(descPQ.peek()).append(System.lineSeparator());
         }

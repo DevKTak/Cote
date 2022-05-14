@@ -1,4 +1,4 @@
-package boj.level24_DFS와BFS;
+package boj.level25_그래프와순회;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -8,7 +8,7 @@ import java.util.*;
 /**
  * DFS와 BFS
  */
-public class boj_01260 {
+public class boj_01260_DFS와BFS {
 
     private static ArrayList<Integer>[] adList; // 인접 리스트(Adjacency-list)
     private static boolean[] checkArr; // 정점 방문 여부

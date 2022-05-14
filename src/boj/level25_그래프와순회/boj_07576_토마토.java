@@ -1,4 +1,4 @@
-    package boj.level24_DFS와BFS;
+    package boj.level25_그래프와순회;
 
     import java.io.BufferedReader;
     import java.io.IOException;
@@ -11,7 +11,7 @@
      * 토마토
      * visited[][] 변수가 따로 필요없는 BFS 문제
      */
-    public class boj_07576 {
+    public class boj_07576_토마토 {
 
         private static int M, N;
         private static int[][] map;

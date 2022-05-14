@@ -1,4 +1,4 @@
-package boj.level24_DFS와BFS;
+package boj.level25_그래프와순회;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -10,7 +10,7 @@ import java.util.StringTokenizer;
 /**
  * 나이트의 이동
  */
-public class boj_07562 {
+public class boj_07562_나이트의이동 {
 
     static class Pair {
 

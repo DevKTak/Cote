@@ -1,9 +1,8 @@
-package boj.level24_DFS와BFS;
+package boj.level25_그래프와순회;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.Queue;
 import java.util.StringTokenizer;
@@ -11,7 +10,7 @@ import java.util.StringTokenizer;
 /**
  * 유기농 배추
  */
-public class boj_01012 {
+public class boj_01012_나이트의이동 {
 
     private static int[][] map;
     private static boolean[][] check;

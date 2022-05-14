@@ -1,4 +1,4 @@
-package boj.level24_DFS와BFS;
+package boj.level25_그래프와순회;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -8,7 +8,7 @@ import java.util.*;
 /**
  * 바이러스
  */
-public class boj_02606 {
+public class boj_02606_바이러스 {
 
     private static List<Integer>[] adList; // 인접리스트
     private static boolean checkArr[]; // 방문여부

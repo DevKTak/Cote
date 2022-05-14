@@ -1,4 +1,4 @@
-package boj.level24_DFS와BFS;
+package boj.level25_그래프와순회;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -11,7 +11,7 @@ import java.util.StringTokenizer;
 /**
  * 단지번호붙이기
  */
-public class boj_02667 {
+public class boj_02667_단지번호붙이기 {
 
     private static int N;
     private static int[][] map;

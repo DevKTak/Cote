@@ -1,6 +1,5 @@
-package boj.level24_DFS와BFS;
+package boj.level25_그래프와순회;
 
-import java.io.BufferedReader;
 import java.util.LinkedList;
 import java.util.Queue;
 import java.util.Scanner;
@@ -8,7 +7,7 @@ import java.util.Scanner;
 /**
  * 숨바꼭질
  */
-public class boj_01697 {
+public class boj_01697_숨바꼭질 {
 
     private static int K;
     private static int[] check = new int[100001];

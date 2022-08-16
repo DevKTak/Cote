@@ -38,7 +38,7 @@ public class boj_24479_알고리즘수업_깊이우선탐색1 {
             adList[end].add(start);
         }
 
-        for (int i = 1; i <= N ; i++) {
+        for (int i = 1; i <= N; i++) {
             Collections.sort(adList[i]);
         }
 

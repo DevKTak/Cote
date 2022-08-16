@@ -5,12 +5,12 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.*;
 
-public class boj_24445_알고리즘수업_너비우선탐색2 {
+public class boj_24444_알고리즘수업_너비우선탐색1_re {
 
     private static List<Integer>[] adList;
     private static boolean[] visited;
     private static int[] order;
-    private static int cnt;
+    private static int cnt = 0;
 
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -20,46 +20,48 @@ public class boj_24445_알고리즘수업_너비우선탐색2 {
         int M = Integer.parseInt(st.nextToken());
         int R = Integer.parseInt(st.nextToken());
 
-        adList = new ArrayList[N + 1];
+        adList = new ArrayList[N + 1]; // 배열 초기화
         visited = new boolean[N + 1];
         order = new int[N];
 
-        for (int i = 1; i <= N; i++) {
-            adList[i] = new ArrayList<>();
+        for (int i = 1; i <= M; i++) {
+            adList[i] = new ArrayList<>(); // List 초기화
         }
+
+        int u;
+        int v;
 
         while (M-- > 0) {
             st = new StringTokenizer(br.readLine());
+            u = Integer.parseInt(st.nextToken());
+            v = Integer.parseInt(st.nextToken());
 
-            int start = Integer.parseInt(st.nextToken());
-            int end = Integer.parseInt(st.nextToken());
-
-            adList[start].add(end);
-            adList[end].add(start);
+            adList[u].add(v);
+            adList[v].add(u);
         }
 
-        for (int i = 1; i <= N; i++) {
-            Collections.sort(adList[i], (o1, o2) -> o2 - o1);
+        for (int i = 1; i <= N ; i++) {
+            Collections.sort(adList[i]);
         }
 
         bfs(R);
 
-        Arrays.stream(order).forEach(System.out::println);
+        Arrays.stream(order).forEach((a) -> System.out.println(a));
     }
 
-    private static void bfs(int R) {
+    public static void bfs(int R) {
         Queue<Integer> q = new LinkedList();
         q.offer(R);
         visited[R] = true;
 
         while (!q.isEmpty()) {
-            int num = q.poll();
-            order[num - 1] = ++cnt;
+            int poll = q.poll();
+            order[poll - 1] = ++cnt;
 
-            for (int ad : adList[num]) {
+            for (int ad : adList[poll]) {
                 if (!visited[ad]) {
-                    visited[ad] = true;
                     q.offer(ad);
+                    visited[ad] = true;
                 }
             }
         }

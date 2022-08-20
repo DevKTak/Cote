@@ -10,7 +10,7 @@ import java.util.StringTokenizer;
 /**
  * 유기농 배추
  */
-public class boj_01012_나이트의이동 {
+public class boj_01012_유기농배추 {
 
     private static int[][] map;
     private static boolean[][] check;

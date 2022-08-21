@@ -7,7 +7,7 @@ import java.util.Scanner;
 /**
  * 소트인사이드
  */
-public class boj_01472 {
+public class boj_01427 {
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);

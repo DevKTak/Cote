@@ -47,8 +47,6 @@ public class bj_01181 {
                     return -1;
                 }
             }
-
-
         });
 
         for (String s : arr) {

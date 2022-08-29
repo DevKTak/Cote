@@ -1,5 +1,6 @@
 package boj.level10_재귀;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 /**
@@ -15,6 +16,7 @@ public class boj_10870 {
         dp = new int[N + 1];
 
         System.out.println(fibonacci(N));
+        System.out.println(Arrays.toString(dp));
     }
 
     private static int fibonacci(int n) {

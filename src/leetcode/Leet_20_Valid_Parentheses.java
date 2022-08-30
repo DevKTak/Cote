@@ -8,6 +8,9 @@ public class Leet_20_Valid_Parentheses {
         System.out.println(isValid("["));
     }
 
+    /**
+     * 괄호 짝 여부 파악 문제
+     */
     private static boolean isValid(String s) {
         Stack<Character> stack = new Stack<>();
 

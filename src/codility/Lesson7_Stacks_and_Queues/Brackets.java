@@ -15,9 +15,6 @@ public class Brackets {
      * 괄호 짝 여부 파악 문제
      */
     private static int solution(String S) {
-//        if (S.equals("")) return 1;
-//        if (S.length() == 0) return 1;
-
         Stack<Character> stack = new Stack<>();
 
         for (int i = 0; i < S.length(); i++) {

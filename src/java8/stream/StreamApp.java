@@ -96,5 +96,21 @@ public class StreamApp {
                 .map(String::toUpperCase)
                 .toArray(String[]::new);
         System.out.println(Arrays.toString(result2));
+
+        /**
+         * flatMap 공부
+         */
+        List<Integer> a = Arrays.asList(1, 2, 3);
+        List<Integer> b = Arrays.asList(4, 5);
+        List<Integer> c = Arrays.asList(6, 7, 8);
+
+        List<List<Integer>> listOfListOfInts = Arrays.asList(a, b, c);
+
+        System.out.println("Before flattening: " + listOfListOfInts);
+
+        Stream<List<Integer>> stream = listOfListOfInts.stream();
+        List<Integer> collect = stream.flatMap(qqq -> qqq.stream()).collect(Collectors.toList());
+        System.out.println(collect);
+
     }
 }

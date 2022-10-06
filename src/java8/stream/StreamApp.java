@@ -2,12 +2,10 @@ package java8.stream;
 
 import java8.OnlineClass;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collection;
-import java.util.List;
+import java.util.*;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
 public class StreamApp {
@@ -109,8 +107,74 @@ public class StreamApp {
         System.out.println("Before flattening: " + listOfListOfInts);
 
         Stream<List<Integer>> stream = listOfListOfInts.stream();
-        List<Integer> collect = stream.flatMap(qqq -> qqq.stream()).collect(Collectors.toList());
+        List<Integer> collect = stream.flatMap(abc -> abc.stream()).collect(Collectors.toList());
         System.out.println(collect);
 
+
+        System.out.println("Student 객체들이 저장된 student 리스트에서 모든 학생들의 모든 과목의 평균");
+
+        List<Student> students = Arrays.asList(
+                new Student(80, 90, 75),
+                new Student(70, 100, 75),
+                new Student(85, 90, 85),
+                new Student(80, 100, 90)
+        );
+
+        students.stream()
+                .flatMapToInt(student -> IntStream.of(student.getKor(), student.getEng(), student.getMath()))
+                .average()
+                .ifPresent(avg -> System.out.println(Math.round(avg * 10) /10.0));
+
+        System.out.println("Outer로부터 String foo를 꺼내기 위해서는 NullPointerException을 막기 위해 아래와 같은 여러 번의 null 검사가 불가피하다. 하지만 이러한 부분 역시 flatMap을 사용하면 다음과 같이 코드를 가독성있게 작성할 수 있다.");
+
+        // flatMap 적용 전
+        Outer outer = new Outer();
+        if (outer != null && outer.nested != null && outer.nested.inner != null) {
+            System.out.println(outer.nested.inner.foo);
+        }
+
+        // flatMap 적용 후
+        Optional.of(new Outer())
+                .flatMap(o -> Optional.ofNullable(o.nested))
+                .flatMap(n -> Optional.ofNullable(n.inner))
+                .flatMap(i -> Optional.ofNullable(i.foo))
+                .ifPresent(System.out::println);
+    }
+
+    static class Outer {
+        Nested nested = new Nested();
+    }
+
+    static class Nested {
+        Inner inner = new Inner();
+    }
+
+    static class Inner {
+        String foo = "박경탁";
+    }
+
+    static class Student {
+
+        private int kor;
+        private int eng;
+        private int math;
+
+        public Student(int kor, int eng, int math) {
+            this.kor = kor;
+            this.eng = eng;
+            this.math = math;
+        }
+
+        public int getKor() {
+            return kor;
+        }
+
+        public int getEng() {
+            return eng;
+        }
+
+        public int getMath() {
+            return math;
+        }
     }
 }

@@ -10,6 +10,11 @@ import java.util.StringTokenizer;
 public class ndb_큰수의법칙 {
 
     public static void main(String[] args) throws IOException {
+        /**
+            5 8 2
+            2 4 5 4 6
+            => 46
+         */
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st = new StringTokenizer(br.readLine());
 
@@ -22,27 +27,39 @@ public class ndb_큰수의법칙 {
         for (int i = 0; i < N; i++) {
             arr[i] = Integer.parseInt(st.nextToken());
         }
-        System.out.println(Arrays.toString(arr));
-
 //        Arrays.sort(arr, (o1, o2) -> o2 - o1);
         Arrays.sort(arr, Collections.reverseOrder());
-        System.out.println(Arrays.toString(arr));
 
-        int cnt = 0;
-        int index = 0;
-        int[] top2arr = {arr[0], arr[1]};
-        int result = 0;
+         /*
+            내가 푼 풀이
 
-        for (int i = 0; i < M; i++) {
-            cnt++;
+            int cnt = 0;
+            int index = 0;
+            int[] top2arr = {arr[0], arr[1]};
+            int result = 0;
 
-            if (cnt == K) {
-                cnt = 0;
-                index = 1;
+           for (int i = 0; i < M; i++) {
+                cnt++;
+
+                if (cnt == K) {
+                    cnt = 0;
+                    index = 1;
+                }
+                result += top2arr[index];
+                index = 0;
             }
-            result += top2arr[index];
-            index = 0;
-        }
+            System.out.println(result);
+        */
+
+        // ============================================================== //
+
+        int cnt = (M / (K + 1)) * K;
+        cnt += M % (K + 1);
+
+        int result = 0;
+        result += cnt * arr[0];
+        result += (M - cnt) * arr[1];
+
         System.out.println(result);
     }
 }

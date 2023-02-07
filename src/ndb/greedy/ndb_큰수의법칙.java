@@ -59,7 +59,7 @@ public class ndb_큰수의법칙 {
         // M이 (K + 1)로 나누어 떨어지지 않는 경우도 고려해야한다. 나눈 나머지만큼 가장 큰 수가 추가로 더해진다.
         cnt += M % (K + 1);
 
-        int result = 0;       
+        int result = 0;
         result += cnt * arr[0]; // 가장 큰 수 더하기
         result += (M - cnt) * arr[1]; // 두 번째로 큰 수 더하기
 

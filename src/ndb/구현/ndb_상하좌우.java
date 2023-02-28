@@ -14,8 +14,8 @@ public class ndb_상하좌우 {
 
         int x = 1;
         int y = 1;
-        int[] dx = {0, 0, -1 ,1};
-        int[] dy = {-1, 1, 0, 0};
+        int[] dx = {0, 0, -1 ,1}; // row == y축으로 위쪽아래쪽 == 행
+        int[] dy = {-1, 1, 0, 0}; // column == x축 왼쪽오른쪽 == 열
         char[] moveType = {'L', 'R', 'U', 'D'};
 
         // 이동 계획을 하나씩 확인

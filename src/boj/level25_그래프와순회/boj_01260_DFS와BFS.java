@@ -40,6 +40,14 @@ public class boj_01260_DFS와BFS {
         for (int i = 1; i <= N; i++) {
             Collections.sort(adList[i]);
         }
+
+        /** 인접 리스트 출력 해보기
+         *  adList는 ArrayList형인 배열임
+         * */
+        for (ArrayList list : adList) {
+            System.out.println(list);
+        }
+
         checkArr = new boolean[N + 1];
         dfs(V);
 

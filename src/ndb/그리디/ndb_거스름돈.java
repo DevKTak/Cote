@@ -1,4 +1,4 @@
-package ndb.greedy;
+package ndb.그리디;
 
 public class ndb_거스름돈 {
 

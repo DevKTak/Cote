@@ -5,7 +5,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
-public class 게임개발 {
+public class ndb_게임개발 {
 
     public static int direction;
 

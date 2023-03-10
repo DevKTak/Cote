@@ -2,7 +2,7 @@ package ndb.dfs와bfs;
 
 import java.util.ArrayList;
 
-public class DFS {
+public class ndb_DFS {
 
     public static boolean[] visited = new boolean[9];
     public static ArrayList<ArrayList<Integer>> graph = new ArrayList<ArrayList<Integer>>();

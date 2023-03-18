@@ -7,9 +7,14 @@ import java.util.LinkedList;
 import java.util.Queue;
 import java.util.StringTokenizer;
 
-public class ndb_음료수얼려먹기_BFS {
+public class ndb_미로탈출 {
 
-    private static class Pair {
+    private static int n;
+    private static int m;
+    private static int[][] miro;
+    private static boolean[][] visited;
+
+    static class Pair {
 
         int x;
         int y;
@@ -20,19 +25,14 @@ public class ndb_음료수얼려먹기_BFS {
         }
     }
 
-    private static int n;
-    private static int m;
-    private static int[][] graph;
-    private static boolean[][] visited;
-    private static int result;
-
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st = new StringTokenizer(br.readLine());
 
-        n = Integer.parseInt(st.nextToken()); // 세로 길이 == 행
-        m = Integer.parseInt(st.nextToken()); // 가로 길이 == 열
-        graph = new int[n][m];
+
+        n = Integer.parseInt(st.nextToken());
+        m = Integer.parseInt(st.nextToken());
+        miro = new int[n][m];
         visited = new boolean[n][m];
 
         for (int i = 0; i < n; i++) {
@@ -40,25 +40,20 @@ public class ndb_음료수얼려먹기_BFS {
             String s = st.nextToken();
 
             for (int j = 0; j < m; j++) {
-                graph[i][j] = s.charAt(j) - '0';
+                miro[i][j] = s.charAt(j) - 48;
             }
         }
 
-        for (int i = 0; i < n; i++) {
-            for (int j = 0; j < m; j++) {
-                if (graph[i][j] == 0 && !visited[i][j]) {
-                    result++;
+        bfs(0, 0);
 
-                    bfs(i, j);
-                }
-            }
-        }
-        System.out.println(result);
+        System.out.println(miro[n - 1][m - 1]);
     }
 
-    private static void bfs(int x, int y) {
-        int[] dx = {-1, 1, 0, 0};
-        int[] dy = {0, 0, -1, 1};
+    public static void bfs(int x, int y) {
+
+        // 상, 하, 좌, 우
+        int dx[] = {-1, 1, 0, 0};
+        int dy[] = {0, 0, -1, 1};
 
         Queue<Pair> queue = new LinkedList<>();
         queue.offer(new Pair(x, y));
@@ -66,14 +61,16 @@ public class ndb_음료수얼려먹기_BFS {
 
         while (!queue.isEmpty()) {
             Pair pair = queue.poll();
+            int distance = miro[pair.x][pair.y] + 1;
 
             for (int i = 0; i < 4; i++) {
                 int nx = pair.x + dx[i];
                 int ny = pair.y + dy[i];
 
-                if (nx >= 0 && nx < n && ny >= 0 && ny < m) {
-                    if (!visited[nx][ny] && graph[nx][ny] == 0) {
+                if (0 <= nx && nx < n && 0 <= ny && ny < m) {
+                    if (!visited[nx][ny] && miro[nx][ny] == 1) {
                         visited[nx][ny] = true;
+                        miro[nx][ny] = distance;
                         queue.offer(new Pair(nx, ny));
                     }
                 }

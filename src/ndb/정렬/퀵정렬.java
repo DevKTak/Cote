@@ -1,5 +1,11 @@
 package ndb.정렬;
 
+/**
+ * 가장 대표적인 분할 방식인 호어 분할방식을 기준의 퀵 정렬 알고리즘
+ *
+ * [시간 복잡도]
+ * 최선의 경우: O(NlogN), 최악의 경우: O(NlogN)
+ */
 public class 퀵정렬 {
 
     private static int[] arr = {7, 5, 9, 0, 3, 1, 6, 2, 4, 8};
@@ -35,6 +41,7 @@ public class 퀵정렬 {
         }
 
         // 분할 이후 왼쪽 부분과 오른쪽 부분에서 각각 정렬 수행
+        // 작은 데이터인 right와 피벗을 교체 했기때문에 피벗값이 들어간 right 기준으로 좌/우 나눔
         quickSort(start, right - 1);
         quickSort(right + 1, end);
     }

@@ -6,7 +6,7 @@ package ndb.정렬;
  * [시간 복잡도]
  * 최선의 경우: O(NlogN), 최악의 경우: O(NlogN)
  */
-public class 퀵정렬 {
+public class ndb_퀵정렬 {
 
     private static int[] arr = {7, 5, 9, 0, 3, 1, 6, 2, 4, 8};
 

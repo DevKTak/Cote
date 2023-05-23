@@ -8,7 +8,7 @@ import java.util.Arrays;
  * [시간 복잡도]
  * 최선의 경우: O(N), 최악의경우: O(N²)
  */
-public class 삽입정렬 {
+public class ndb_삽입정렬 {
 
     public static void main(String[] args) {
 

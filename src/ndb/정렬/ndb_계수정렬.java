@@ -1,6 +1,6 @@
 package ndb.정렬;
 
-public class 계수정렬 {
+public class ndb_계수정렬 {
 
     public static final int MAX_VALUE = 9;
 

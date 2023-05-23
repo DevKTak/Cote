@@ -13,19 +13,15 @@ public class ndb_두배열의원소교체 {
         Arrays.sort(a);
         Arrays.sort(b);
 
-        int sum = 0;
+        int sum = Arrays.stream(a, k, n)
+                .mapToInt(Integer::intValue)
+                .sum();
 
-        for (int i = k; i < n; i++) {
-            sum += a[i];
-        }
-
-
-        for (int i = n - k; i < n; i++) {
-            sum += b[i];
-        }
+        sum += Arrays.stream(b, n - k, n)
+                .mapToInt(Integer::intValue)
+                .sum();
 
         System.out.println(sum);
-
 
         /* [교재 정답]
         // 배열 A는 오름차순 정렬 수행

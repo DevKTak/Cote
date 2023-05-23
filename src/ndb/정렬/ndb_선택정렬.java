@@ -8,7 +8,7 @@ import java.util.Arrays;
  * [시간 복잡도]
  * O(N²)
  */
-public class 선택정렬 {
+public class ndb_선택정렬 {
 
     public static void main(String[] args) {
         int[] arr = {7, 5, 9, 0, 3, 1, 6, 2, 4, 8};

@@ -23,7 +23,6 @@ public class ndb_이진탐색_반복문 {
 
         return -1;
 
-
         /*
             [교재 답안]
 
@@ -43,6 +42,10 @@ public class ndb_이진탐색_반복문 {
 
     public static void main(String[] args) {
         int result = binarySearch(0, n - 1);
+
+//        Arrays.sort(arr);
+//        int result = Arrays.binarySearch(arr, target);
+
 
         if (result != -1) {
             System.out.println(result);

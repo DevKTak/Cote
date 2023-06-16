@@ -23,7 +23,7 @@ public class ndb_모험가길드 {
         System.out.println(cnt);
          */
 
-        int cnt = 0; // 현재 그룹에 포함된 모험가의 수
+       /* int cnt = 0; // 현재 그룹에 포함된 모험가의 수
         int result = 0; // 총 그룹의 수
 
         Arrays.sort(arr);
@@ -36,6 +36,31 @@ public class ndb_모험가길드 {
                 cnt = 0; // 현재 그룹에 포함된 모함가의 수 초기화
             }
         }
-        System.out.println(result);
+        System.out.println(result);*/
+
+        int curCnt = 0;
+        int teamCnt = 0;
+
+        Arrays.sort(arr);
+
+        for (int v : arr) {
+            curCnt++;
+
+            if (v == curCnt) {
+                teamCnt++;
+                curCnt = 0;
+            }
+        }
+        System.out.println(teamCnt);
+
+
+
+
+
+
+
+
+
+
     }
 }

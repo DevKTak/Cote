@@ -32,9 +32,8 @@ public class boj_09012 {
             } else {
                 if (stack.isEmpty()) { // pop 할 원소가 없을 경우
                     return "NO";
-                } else {
-                    stack.pop();
                 }
+                stack.pop();
             }
         }
 

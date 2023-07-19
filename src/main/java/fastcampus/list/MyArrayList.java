@@ -37,8 +37,8 @@ public class MyArrayList<T> implements IList<T> {
 
     @Override
     public void insert(int index, T t) {
-        if (index < 0 || index > this.size - 1) {
-            throw new IndexOutOfBoundsException("배열의 크기를 벗어난 인덱스입니다.");
+        if (index < 0 || index > this.size) {
+            throw new IndexOutOfBoundsException("리스트의 크기를 벗어난 인덱스입니다.");
         }
 
         if (this.size == this.elementData.length) {
@@ -83,7 +83,7 @@ public class MyArrayList<T> implements IList<T> {
     @Override
     public boolean deleteByIndex(int index) {
         if (index < 0 || index > this.size - 1) {
-            throw new IndexOutOfBoundsException("배열의 크기를 벗어난 인덱스입니다.");
+            throw new IndexOutOfBoundsException("리스트의 크기를 벗어난 인덱스입니다.");
         }
 
         for (int i = index; i < this.size - 1; i++) {
@@ -97,7 +97,7 @@ public class MyArrayList<T> implements IList<T> {
     @Override
     public T get(int index) {
         if (index < 0 || index > this.size - 1) {
-            throw new IndexOutOfBoundsException("배열의 크기를 벗어난 인덱스입니다.");
+            throw new IndexOutOfBoundsException("리스트의 크기를 벗어난 인덱스입니다.");
         }
         
         return this.elementData[index];

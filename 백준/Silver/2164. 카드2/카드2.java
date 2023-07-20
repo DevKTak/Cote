@@ -1,36 +1,119 @@
-
-
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.ArrayDeque;
-import java.util.Deque;
+import java.util.LinkedList;
+import java.util.Queue;
+import java.util.StringTokenizer;
 
+/*
+ * https://www.acmicpc.net/problem/2164
+ * 
+ * 2164 카드2
+ * 
+ * Queue가 따로 있음!
+ */
 public class Main {
+   public static void main(String []args) throws IOException {
+	   BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		StringTokenizer st = new StringTokenizer(br.readLine());
+		int n = Integer.parseInt(st.nextToken());
+      
+//      Queue2 queue = new Queue2();
+      Queue<Integer> queue = new LinkedList<Integer>();
+      
+      for(int i = 0 ; i < n; i++) {
+         queue.offer(i+1);
+      }
 
-    public static void main(String[] args) throws IOException {
-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+      while(queue.size() != 1) {
+         queue.poll();
+         
+         if(queue.size() == 1)
+            break;
+         
+         int num = queue.poll();
+         queue.offer(num);
+      }
+      
+      System.out.println(queue.peek());
+   }
+}
 
-        Deque<Integer> dq = new ArrayDeque<>();
-        int N = Integer.parseInt(br.readLine());
-
-        if (N == 1) {
-            System.out.println(1);
-            System.exit(0);
+class Queue2 {
+    int size;
+    Node headNode;
+    
+    Queue2() {
+        this.size = 0;
+        headNode = null;
+    }
+    
+    int front() {
+        if(headNode == null) {
+            return -1;
+        } else {
+            return headNode.val;
         }
-
-        for (int i = N; i > 0; i--) {
-            dq.offer(i);
-        }
-
-        while (true) {
-            dq.pollLast();
-
-            if (dq.size() == 1) {
-                System.out.println(dq.peek());
-                break;
+    }
+    
+    int back() {
+        if(headNode == null) {
+            return -1;
+        } else {
+            Node tmp = headNode;
+            while(tmp.next != null) {
+                tmp = tmp.next;
             }
-            dq.offerFirst(dq.pollLast());
+            return tmp.val;
+        }
+    }
+    
+    int size() {
+        return this.size;
+    }
+    
+    void push(int num) {
+        Node newNode = new Node(num);
+        Node tmp = this.headNode;
+        if(tmp == null) {
+           this.headNode = newNode;
+           this.size++;
+           return;
+        }
+        while(tmp.next != null) {
+            tmp = tmp.next;
+        }
+        tmp.next = newNode;
+        this.size++;
+    }
+    
+    int pop() {
+       if(headNode == null) {
+          return -1;
+       }
+       
+       Node tmp = this.headNode;
+       this.headNode = tmp.next;
+       this.size--;
+       
+       return tmp.val;
+    }
+    
+    int empty() {
+        if(size == 0) {
+           return 1;
+        } else {
+           return 0;
+        }
+    }
+    
+    class Node {
+        Node next;
+        int val;
+        
+        Node(int val) {
+            this.next = null;
+            this.val = val;
         }
     }
 }

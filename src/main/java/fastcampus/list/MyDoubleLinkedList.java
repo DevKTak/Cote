@@ -164,12 +164,18 @@ public class MyDoubleLinkedList<T> implements IList<T> {
         Node frontCurr = this.head.next;
         Node rearCurr = this.tail.prev;
 
-        while (frontCurr != rearCurr && frontCurr.prev != rearCurr) {
-            if (frontCurr.data.equals(t) || rearCurr.data.equals(t)) {
+        int middle = this.size / 2;
+        while (middle-- > 0) {
+            if (t.equals(frontCurr.data) || t.equals(rearCurr.data)) {
                 return true;
             }
             frontCurr = frontCurr.next;
             rearCurr = rearCurr.prev;
+        }
+
+        // 노드가 홀수 개인 경우 중앙 노드를 한 번 더 검사
+        if (this.size % 2 != 0 && t.equals(frontCurr.data)) {
+            return true;
         }
 
         return false;

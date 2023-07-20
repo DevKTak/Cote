@@ -37,7 +37,7 @@ public class MyLinkedList<T> implements IList<T> {
 
     @Override
     public void insert(int index, T t) {
-        if (index < 0 || index > this.size) { // deleteByIndex()와 다름을 확인하시오.
+        if (index < 0 || index > this.size) { // deleteByIndex()와 부등호가 다름을 확인하시오.
             throw new IndexOutOfBoundsException("리스트의 크기를 벗어난 인덱스입니다.");
         }
 
@@ -67,7 +67,7 @@ public class MyLinkedList<T> implements IList<T> {
         while (curr != null) {
             if (curr.data.equals(t)) {
                 prev.next = curr.next;
-                curr.next = null; // curr은 더 이상 참조하는 객체가 없기 때문에 gc에 의해 회수될 예정
+                curr.next = null; // curr 은 더 이상 참조하는 객체가 없기 때문에 gc에 의해 회수될 예정
                 this.size--;
 
                 return true;
@@ -105,7 +105,7 @@ public class MyLinkedList<T> implements IList<T> {
             throw new IndexOutOfBoundsException("리스트의 크기를 벗어난 인덱스입니다.");
         }
 
-        // get()은 연결시켜주는 작업이 필요없기 때문에 prev가 필요없음, dummy 노드부터 시작할 필요도 없음
+        // get()은 연결시켜주는 작업이 필요없기 때문에 prev 가 필요없음, dummy 노드부터 시작할 필요도 없음
         Node curr = this.head.next;
 
         while (index-- > 0) {
@@ -139,16 +139,17 @@ public class MyLinkedList<T> implements IList<T> {
 
     @Override
     public boolean contains(T t) {
-        Node curr = this.head.next;
-
-        while (curr != null) {
-            if (curr.data.equals(t)) {
-                return true;
-            }
-            curr = curr.next;
-        }
-
-        return false;
+//        Node curr = this.head.next;
+//
+//        while (curr != null) {
+//            if (curr.data.equals(t)) { // equals() 메서드는 null 이여도 상관없기때문에 체크할 필요 없다.
+//                return true;
+//            }
+//            curr = curr.next;
+//        }
+//
+//        return false;
+        return indexOf(t) >= 0;
     }
 
     @Override

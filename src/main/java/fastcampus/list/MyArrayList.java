@@ -62,7 +62,7 @@ public class MyArrayList<T> implements IList<T> {
     public boolean delete(T t) {
         int index = -1;
         for (int i = 0; i < this.size; i++) {
-            if (this.elementData[i] == t || this.elementData.equals(t)) {
+            if (this.elementData.equals(t)) {
                 index = i;
                 break;
             }
@@ -106,7 +106,7 @@ public class MyArrayList<T> implements IList<T> {
     @Override
     public int indexOf(T t) {
         for (int i = 0; i < this.size; i++) {
-            if (this.elementData[i] == t || this.elementData[i].equals(t)) {
+            if (this.elementData[i].equals(t)) {
                 return i;
             }
         }
@@ -122,7 +122,7 @@ public class MyArrayList<T> implements IList<T> {
     @Override
     public boolean contains(T t) {
         for (T el : this.elementData) {
-            if (el == t || el.equals(t)) {
+            if (el.equals(t)) {
                 return true;
             }
         }

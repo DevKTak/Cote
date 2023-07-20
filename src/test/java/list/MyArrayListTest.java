@@ -1,14 +1,12 @@
-//package list;
-//
-//import fastcampus.list.IList;
-//import fastcampus.list.MyArrayList;
-//import org.junit.jupiter.api.Test;
-//
-//import static org.assertj.core.api.Assertions.assertThat;
-//
-//
-//public class MyArrayListTest {
-//
+package list;
+
+import org.junit.jupiter.api.Test;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class MyArrayListTest {
+
 //    @Test
 //    public void add() {
 //        IListt<Integer> given = new MyArrayList<>();
@@ -32,4 +30,11 @@
 //        assertThat(given.size()).isEquals(100);
 //        assertThat(given.isEmpty());
 //    }
-//}
+    @Test
+    public void test() {
+        List<String> list = new ArrayList<>();
+        list.add(null);
+        boolean contains = list.contains(null);
+        System.out.println(contains);
+    }
+}

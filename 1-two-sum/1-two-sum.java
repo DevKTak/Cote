@@ -6,7 +6,7 @@ class Solution {
             int requiredNum = target - nums[i];
 
             if (indexMap.containsKey(requiredNum)) {
-                return new int[]{i, indexMap.get(requiredNum)};
+                return new int[]{indexMap.get(requiredNum), i};
             }
             indexMap.put(nums[i], i);
         }

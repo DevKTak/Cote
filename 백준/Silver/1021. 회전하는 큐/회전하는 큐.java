@@ -1,69 +1,53 @@
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.Deque;
-import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.StringTokenizer;
 
 public class Main {
 
-	static int N, M;
-	static StringBuilder sb = new StringBuilder();
-	static int count = 0;
-	static LinkedList<Integer> q = new LinkedList<>();
-	
-	public static void main(String[] args) throws IOException {
-		
-		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-		
-		StringTokenizer st = new StringTokenizer(br.readLine());
-		
-		N = Integer.parseInt(st.nextToken());
-		M = Integer.parseInt(st.nextToken());
-		
-		st = new StringTokenizer(br.readLine());
-		
-		int[] temp = new int[M];
-		for(int i = 0 ; i < M ; i++)
-			temp[i] = Integer.parseInt(st.nextToken());
-		
-		// 필요한 변수
-		// 일단 뽑아낼 원소의 위치가 left가 빠른지 right가 빠른지 판별하는 것
-		// 아마도 q.size 절반보다 작으면 left 아니면 right가 빠르다.
-		// 그걸로 보내주면 끝
-		for(int i = 1 ; i <= N ; i++)
-			q.add(i);
-		
-		for(int i = 0 ; i < M ; i++) {
-			
-			if(check(temp[i])) {
-				while(temp[i]!=q.get(0)) {
-				q.addLast(q.pollFirst());
-				count++;
-				}
-			}else {
-				while(temp[i]!=q.get(0)) {
-				q.addFirst(q.pollLast());
-				count++;
-				}
-			}
-			
-			q.poll();
-		}
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        StringTokenizer st = new StringTokenizer(br.readLine());
 
-		
-		System.out.println(count);
+        int N = Integer.parseInt(st.nextToken()); // 큐의 크기
+        int M = Integer.parseInt(st.nextToken()); // 뽑아내려고 하는 수의 개수
 
-		}
-	public static boolean check(int a) {
-		
-		for(int i = 0 ; i <= q.size()/2 ; i++) {
-			if(a == q.get(i))
-				return true;
-		}
-		
-		return false;
-	}
+        LinkedList<Integer> list = new LinkedList<>();
+        for (int i = 1; i <= N; i++) {
+            list.offer(i);
+        }
 
+        st = new StringTokenizer(br.readLine());
+        int cnt = 0;
+
+        for (int i = 0; i < M; i++) {
+            int target = Integer.parseInt(st.nextToken());
+            boolean flag = false;
+
+            for (int j = 0; j <= list.size() / 2; j++) {
+                if (target == list.get(j)) {
+                    flag = true;
+                    break;
+                }
+            }
+
+            if (flag) { // 중간 기준 왼쪽
+                while (target != list.peekFirst()) {
+                    list.offerLast(list.pollFirst());
+                    cnt++;
+                }
+                list.pollFirst();
+            } else { // 중간 기준 오른쪽
+                while (target != list.peekLast()) {
+                    list.offerFirst(list.pollLast());
+                    cnt++;
+                }
+                list.offerFirst(list.pollLast());
+                list.pollFirst();
+                cnt++;
+            }
+        }
+        System.out.println(cnt);
+    }
 }

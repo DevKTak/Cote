@@ -1,5 +1,3 @@
-
-
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -11,26 +9,27 @@ import java.util.*;
 public class Main {
 
     public static void main(String[] args) throws IOException {
-        BufferedReader bf = new BufferedReader(new InputStreamReader(System.in));
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
-        Map<String,Float> map = new HashMap<>();
+        Map<String, Integer> tree = new HashMap<>();
+        int cnt = 0;
+        String line;
 
-        float count = 0f;
-
-        String str = "";
-
-        while((str= bf.readLine())!=null){
-            map.put(str, map.getOrDefault(str,0f)+1f);
-            count++;
+        while ((line = br.readLine()) != null) {
+            tree.put(line, tree.getOrDefault(line, 0) + 1);
+            cnt++;
         }
 
+        List<String> keyList = new ArrayList<>(tree.keySet());
+        Collections.sort(keyList);
+        StringBuilder sb = new StringBuilder();
 
-        List<String> keys = new ArrayList<>(map.keySet());
-        Collections.sort(keys);
-
-        for(String key : keys){
-            System.out.print(key+" ");
-            System.out.println(String.format("%.4f",map.get(key)/count*100));
+        for (String key : keyList) {
+            sb.append(key)
+                    .append(" ")
+                    .append(String.format("%.4f", ((double) tree.get(key) / cnt) * 100))
+                    .append("\n");
         }
+        System.out.println(sb);
     }
 }

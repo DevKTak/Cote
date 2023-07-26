@@ -7,6 +7,7 @@ import java.util.HashSet;
 import java.util.Set;
 import java.util.StringTokenizer;
 
+// 수 찾기
 public class boj_01920 {
 
     public static void main(String[] args) throws IOException {

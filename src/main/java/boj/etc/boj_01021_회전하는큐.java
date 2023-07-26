@@ -6,7 +6,8 @@ import java.io.InputStreamReader;
 import java.util.LinkedList;
 import java.util.StringTokenizer;
 
-public class boj_01021 {
+// 회전 하는 큐
+public class boj_01021_회전하는큐 {
 
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));

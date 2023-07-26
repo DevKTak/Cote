@@ -10,8 +10,9 @@ repositories {
 }
 
 dependencies {
+    implementation 'io.freefair.gradle:lombok-plugin:6.6.3'
     implementation 'org.junit.jupiter:junit-jupiter:5.9.2'
-    testImplementation "org.assertj:assertj-core:3.20.2"
+    testImplementation 'org.assertj:assertj-core:3.20.2'
 }
 
 test {

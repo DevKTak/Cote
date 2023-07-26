@@ -8,7 +8,7 @@ import java.util.Queue;
 import java.util.StringTokenizer;
 
 // Router
-public class boj_15828 {
+public class boj_15828_Router {
 
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -27,7 +27,7 @@ public class boj_15828 {
                 router.poll();
             }
 
-            if (bufferSize == router.size()) {
+            if (bufferSize == router.size()) { // 버퍼가 꽉 차있을 경우
                 continue;
             }
 
@@ -40,6 +40,6 @@ public class boj_15828 {
             System.out.println("empty");
             return;
         }
-        router.stream().forEach(v -> System.out.printf(v + " "));
+        router.forEach(v -> System.out.print(v + " "));
     }
 }

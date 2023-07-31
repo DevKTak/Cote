@@ -71,8 +71,6 @@ public class boj_09934_완전이진트리 {
     }
 
     private static void printTree(Node rootNode) {
-//        System.out.println(rootNode);
-
         StringBuilder sb = new StringBuilder();
         Queue<Node> queue = new LinkedList<>();
         queue.offer(rootNode);

@@ -1,6 +1,10 @@
 package boj.etc;
 
-import java.io.*;
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
 import java.util.StringTokenizer;
 
 /**
@@ -8,10 +12,10 @@ import java.util.StringTokenizer;
  */
 public class boj_10816_숫자카드2 {
 
-    public static void main(String[] args) throws IOException {
-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
-        StringTokenizer st;
+	public static void main(String[] args) throws IOException {
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+		StringTokenizer st;
 
       /*
         [Map 이용]
@@ -34,22 +38,22 @@ public class boj_10816_숫자카드2 {
         bw.close();
        */
 
-        // [카운팅 소트]
-        int N = Integer.parseInt(br.readLine());
-        st = new StringTokenizer(br.readLine());
-        int[] arr = new int[20000001]; // -10,000,000 ~ 10,000,000
+		// [카운팅 소트]
+		int N = Integer.parseInt(br.readLine());
+		st = new StringTokenizer(br.readLine());
+		int[] arr = new int[20000001]; // -10,000,000 ~ 10,000,000
 
-        for (int i = 0; i < N; i++) {
-            arr[Integer.parseInt(st.nextToken()) + 10000000]++;
-        }
+		for (int i = 0; i < N; i++) {
+			arr[Integer.parseInt(st.nextToken()) + 10000000]++;
+		}
 
-        int M = Integer.parseInt(br.readLine());
-        st = new StringTokenizer(br.readLine());
+		int M = Integer.parseInt(br.readLine());
+		st = new StringTokenizer(br.readLine());
 
-        for (int i = 0; i < M; i++) {
-            bw.write(arr[Integer.parseInt(st.nextToken()) + 10000000] + " ");
-        }
-        bw.flush();
-        bw.close();
-    }
+		for (int i = 0; i < M; i++) {
+			bw.write(arr[Integer.parseInt(st.nextToken()) + 10000000] + " ");
+		}
+		bw.flush();
+		bw.close();
+	}
 }

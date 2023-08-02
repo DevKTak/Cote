@@ -3,15 +3,16 @@ import java.io.BufferedWriter;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.StringTokenizer;
 
 public class Main {
 
 	private static class Node {
-
-		private char data;
-		private Node left;
-		private Node right;
+		char data;
+		Node left;
+		Node right;
 
 		public Node(char data) {
 			this.data = data;
@@ -25,71 +26,59 @@ public class Main {
 		StringTokenizer st;
 
 		int N = Integer.parseInt(br.readLine());
-		Node node = new Node('A');
+		Map<Character, Node> nodeMap = new HashMap<>();
 
 		for (int i = 0; i < N; i++) {
 			st = new StringTokenizer(br.readLine());
-			char root = st.nextToken().charAt(0);
-			char left = st.nextToken().charAt(0);
-			char right = st.nextToken().charAt(0);
+			char rootValue = st.nextToken().charAt(0);
+			char leftValue = st.nextToken().charAt(0);
+			char rightValue = st.nextToken().charAt(0);
 
-			buildTree(node, root, left, right);
+			Node root = nodeMap.getOrDefault(rootValue, new Node(rootValue));
+			root.left = leftValue == '.' ? null : nodeMap.getOrDefault(leftValue, new Node(leftValue));
+			root.right = rightValue == '.' ? null : nodeMap.getOrDefault(rightValue, new Node(rightValue));
+
+			nodeMap.put(rootValue, root);
+			if (!nodeMap.containsKey(leftValue)) {
+				nodeMap.put(leftValue, root.left);
+			}
+			if (!nodeMap.containsKey(rightValue)) {
+				nodeMap.put(rightValue, root.right);
+			}
 		}
 
-		preOrder(node);
+		Node rootNode = nodeMap.get('A');
+
+		preOrder(rootNode);
 		bw.write("\n");
 
-		inOrder(node);
+		inOrder(rootNode);
 		bw.write("\n");
 
-		postOrder(node);
+		postOrder(rootNode);
+		bw.write("\n");
+
 		bw.flush();
 		bw.close();
 	}
 
-	private static void buildTree(Node node, char root, char left, char right) {
-		if (node.data == root) {
-			if (left == '.') {
-				node.left = null;
-			} else {
-				node.left = new Node(left);
-			}
-
-			if (right == '.') {
-				node.right = null;
-			} else {
-				node.right = new Node(right);
-			}
-		} else {
-			if (node.left != null) {
-				buildTree(node.left, root, left, right);
-			}
-			if (node.right != null)
-				buildTree(node.right, root, left, right);
-		}
-	}
-
 	private static void preOrder(Node node) throws IOException {
-		// 종료 조건
 		if (node == null) return;
-		bw.write(node.data);
 
+		bw.write(node.data);
 		preOrder(node.left);
 		preOrder(node.right);
 	}
 
 	private static void inOrder(Node node) throws IOException {
-		//종료 조건
 		if (node == null) return;
 
 		inOrder(node.left);
 		bw.write(node.data);
-
 		inOrder(node.right);
 	}
 
 	private static void postOrder(Node node) throws IOException {
-		// 종료 조건
 		if (node == null) return;
 
 		postOrder(node.left);
@@ -97,3 +86,4 @@ public class Main {
 		bw.write(node.data);
 	}
 }
+

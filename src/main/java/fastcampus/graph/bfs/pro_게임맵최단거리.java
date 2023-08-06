@@ -2,7 +2,7 @@ package fastcampus.graph.bfs;
 
 import java.util.LinkedList;
 import java.util.Queue;
-
+Z
 public class pro_게임맵최단거리 {
 
 	private static class Pair {
@@ -17,11 +17,11 @@ public class pro_게임맵최단거리 {
 	}
 
 	public static void main(String[] args) {
-		int[][] maps = { { 1,0,1,1,1 },
-			{ 1,0,1,0,1 },
-			{ 1,0,1,1,1 },
-			{ 1,1,1,0,1 },
-			{ 0,0,0,0,1 } };
+		int[][] maps = {{1, 0, 1, 1, 1},
+			{1, 0, 1, 0, 1},
+			{1, 0, 1, 1, 1},
+			{1, 1, 1, 0, 1},
+			{0, 0, 0, 0, 1}};
 		System.out.println(solution(maps));
 	}
 

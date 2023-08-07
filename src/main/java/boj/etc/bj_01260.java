@@ -26,7 +26,7 @@ public class bj_01260 {
 		checkArr[V] = true; // 방문 처리
 		System.out.println(V + " ");
 
-		for (int ad : adList[V]) { // V 정점의 인접 리스트 정점들 순차 방문
+			for (int ad : adList[V]) { // V 정점의 인접 리스트 정점들 순차 방문
 			if (!checkArr[ad]) { // 방문한 적이 없을 경우
 				dfs(ad);
 			}

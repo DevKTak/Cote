@@ -24,7 +24,7 @@ public class 네트워크 {
 //        if (visited[i]) {
 //            return;
 //        }
-        visited[i]= true;
+        visited[i] = true;
         System.out.println(i + " ");
 
         for (int j = 0; j < computes[i].length; j++) {

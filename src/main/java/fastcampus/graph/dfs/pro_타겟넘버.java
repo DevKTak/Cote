@@ -23,6 +23,5 @@ public class pro_타겟넘버 {
 		}
 		recursion(numbers, index + 1, sum + numbers[index], target);
 		recursion(numbers, index + 1, sum - numbers[index], target);
-
 	}
 }

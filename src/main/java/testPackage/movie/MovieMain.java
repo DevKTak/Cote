@@ -49,11 +49,11 @@ public class MovieMain {
 		StringBuilder sb = new StringBuilder();
 
 		for (Movie movie : movies) {
-			sb.append("\n제목: ").append(movie.getTitle());
-			sb.append("주인공: ").append(movie.getActor());
-			sb.append("제작사: ").append(movie.getCompany());
-			sb.append("가격: ").append(movie.getPrice());
-			sb.append("등급: ").append(movie.getGrade());
+			sb.append(System.lineSeparator()).append("제목: ").append(movie.getTitle());
+			sb.append(System.lineSeparator()).append("주인공: ").append(movie.getActor());
+			sb.append(System.lineSeparator()).append("제작사: ").append(movie.getCompany());
+			sb.append(System.lineSeparator()).append("가격: ").append(movie.getPrice());
+			sb.append(System.lineSeparator()).append("등급: ").append(movie.getGrade());
 		}
 		System.out.println(sb);
 	}
@@ -89,3 +89,33 @@ public class MovieMain {
 		return Optional.empty();
 	}
 }
+
+/*
+[TestCase]
+
+범죄도시3
+마동석
+CJ시네마
+18000
+15
+가가가
+가동석
+가시네마
+11111
+11
+라라라
+라동석
+라시네마
+44444
+44
+나나나
+나동석
+나시네마
+22222
+22
+다다다
+다동석
+다시네마
+33333
+33
+ */

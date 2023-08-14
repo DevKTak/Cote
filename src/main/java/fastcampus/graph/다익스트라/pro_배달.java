@@ -12,8 +12,8 @@ public class pro_배달 {
 
 	static class Vertex implements Comparable<Vertex> {
 
-		private int index;
-		private int time;
+		private final int index;
+		private final int time;
 
 		public Vertex(int index, int time) {
 			this.index = index;

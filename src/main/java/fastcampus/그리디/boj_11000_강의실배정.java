@@ -66,6 +66,7 @@ public class boj_11000_강의실배정 {
 		for (int i = 1; i < lectures.size(); i++) {
 			Lecture lecture = lectures.get(i);
 
+			// 주석은 리팩토링 하기전 코드
 			// if (lecture.getStartTime() < rooms.peek()) { // 다음으로 시작시간이 빠른 강의가 현재 큐에 있는 강의의 종료시간보다 작으면
 			// 	rooms.add(lecture.getEndTime()); // 강의실이 하나 더 필요하다, 다음 강의의 종료시간을 넣어준다.
 			// } else {

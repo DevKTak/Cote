@@ -15,7 +15,7 @@ public class 영어끝말잇기 {
 	}
 
 	private static int[] solution(int n, String[] words) {
-		Set<String> set = new LinkedHashSet<>();
+		Set<String> set = new LinkedHashSet<>(); // 중복 허용 X, [순서 보장 O]
 		set.add(words[0]);
 		int[] result = new int[2];
 

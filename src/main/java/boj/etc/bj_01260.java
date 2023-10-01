@@ -21,12 +21,13 @@ public class bj_01260 {
 
 	/** dfs 로직 */
 	private static void dfs(int V) {
-		if (checkArr[V])
-			return; // 이미 방문한 경우
+		if (checkArr[V]) { // 이미 방문한 경우
+			return;
+		}
 		checkArr[V] = true; // 방문 처리
 		System.out.println(V + " ");
 
-			for (int ad : adList[V]) { // V 정점의 인접 리스트 정점들 순차 방문
+		for (int ad : adList[V]) { // V 정점의 인접 리스트 정점들 순차 방문
 			if (!checkArr[ad]) { // 방문한 적이 없을 경우
 				dfs(ad);
 			}

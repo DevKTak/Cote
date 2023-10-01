@@ -7,11 +7,11 @@ public class 최소점프 {
 
 	public int solution(int home) {
 		Queue<Integer> queue = new LinkedList<>();
-		boolean[] isVisited = new boolean[10001];
+		boolean[] isVisited = new boolean[10001]; // 좌표가 0 부터 10,000 까지
 
 		queue.offer(0);
 		isVisited[0] = true;
-		int level = 0;
+		int level = 0; // 트리 구조로 그려서 생각
 
 		while (!queue.isEmpty()) {
 			int n = queue.size();

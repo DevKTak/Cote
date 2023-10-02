@@ -42,7 +42,7 @@ public class 검정색영역구하기_BFS {
 				int nr = pair.getR() + dr[i];
 				int nc = pair.getC() + dc[i];
 
-				if (nr >= 0 && nr < board.length && nc >= 0 && nc < board[i].length) {
+				if (nr >= 0 && nr < board.length && nc >= 0 && nc < board[0].length) {
 					if (board[nr][nc] == 1) {
 						board[nr][nc] = 0; // 방문 처리
 						queue.offer(new Pair(nr, nc));

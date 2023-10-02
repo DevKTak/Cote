@@ -8,7 +8,7 @@ import java.util.Stack;
  */
 public class 순열구하기 {
 
-	private static final Stack<Integer> stack = new Stack<>();
+	Stack<Integer> stack = new Stack<>();
 
 	public void DFS(int L, int n, int m, boolean[] ch) {
 		if (L == m) {

@@ -15,7 +15,7 @@ public class 검정색영역구하기_DFS {
 			int nr = r + dr[i];
 			int nc = c + dc[i];
 
-			if (nr >= 0 && nr < board.length && nc >= 0 && nc < board[i].length) { // board 범위 내부
+			if (nr >= 0 && nr < board.length && nc >= 0 && nc < board[0].length) { // board 범위 내부
 				if (board[nr][nc] == 1) {
 					DFS(nr, nc, board);
 				}

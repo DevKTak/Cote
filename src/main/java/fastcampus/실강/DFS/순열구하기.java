@@ -9,8 +9,9 @@ import java.util.Stack;
 public class 순열구하기 {
 
 	Stack<Integer> stack = new Stack<>();
+	boolean[] ch;
 
-	public void DFS(int L, int n, int m, boolean[] ch) {
+	public void DFS(int L, int n, int m) {
 		if (L == m) {
 			for (int val : stack) {
 				System.out.print(val + " ");
@@ -22,7 +23,7 @@ public class 순열구하기 {
 					ch[i] = true;
 					stack.push(i);
 
-					DFS(L + 1, n, m, ch);
+					DFS(L + 1, n, m);
 					ch[i] = false;
 					stack.pop();
 				}
@@ -31,8 +32,8 @@ public class 순열구하기 {
 	}
 
 	public void solution(int n, int m) {
-		boolean[] ch = new boolean[n + 1];
-		DFS(0, n, m, ch);
+		ch = new boolean[n + 1];
+		DFS(0, n, m);
 	}
 
 	public static void main(String[] args) {

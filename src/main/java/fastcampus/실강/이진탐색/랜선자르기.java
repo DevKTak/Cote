@@ -3,11 +3,11 @@ package fastcampus.실강.이진탐색;
 public class 랜선자르기 {
 
 	public int solution(int[] nums, int n) {
-		// sort는 시간복잡도가 O(NlogN) 이기때문에 right 인 최대값을 찾기 위해 아래와 같이 하는게 낫다.
-		// Arrays.sort(nums);
-
 		int left = 0;
 		int right = 0;
+
+		// sort는 시간복잡도가 O(NlogN) 이기때문에 right 인 최대값을 찾기 위해 아래와 같이 하는게 낫다.
+		// Arrays.sort(nums);
 		for (int x : nums)
 			right = Math.max(right, x); // O(logN)
 

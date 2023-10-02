@@ -1,8 +1,5 @@
 package fastcampus.실강.DFS;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class 피로도 {
 
 	public static void main(String[] args) {
@@ -10,40 +7,26 @@ public class 피로도 {
 		System.out.println(T.solution(80, new int[][] {{80, 20}, {50, 40}, {30, 10}}));
 	}
 
-	int maxSum = 0;
-	List<Integer> list = new ArrayList<>();
+	int maxCnt = 0;
+	boolean[] visited;
 
 	public int solution(int k, int[][] dungeons) {
+		visited = new boolean[dungeons.length];
 
-		int curStatus;
+		dfs(0, k, dungeons);
 
-		for (int i = 0; i < dungeons.length; i++) {
-			boolean[] ch = new boolean[dungeons.length];
-			curStatus = k;
-			ch[i] = true;
-			maxSum = 0;
-
-			if (curStatus >= dungeons[i][0]) {
-				curStatus -= dungeons[i][1];
-				maxSum++;
-			}
-			dfs(curStatus, dungeons, ch);
-			list.add(maxSum);
-		}
-		return maxSum;
+		return maxCnt;
 	}
 
-	private void dfs(int curStatus, int[][] dungeons, boolean[] ch) {
+	private void dfs(int L, int k, int[][] dungeons) {
 		for (int i = 0; i < dungeons.length; i++) {
-			if (!ch[i]) {
-				ch[i] = true;
+			if (!visited[i] && dungeons[i][0] <= k) { // visited[i]에 방문한적이 없고 피로도 조건이 맞으면
+				visited[i] = true;
 
-				if (curStatus >= dungeons[i][0]) {
-					curStatus -= dungeons[i][1];
-					maxSum++;
-				}
-				dfs(curStatus, dungeons, ch);
+				dfs(L + 1, k - dungeons[i][1], dungeons);
+				visited[i] = false;
 			}
+			maxCnt = Math.max(maxCnt, L);
 		}
 	}
 }

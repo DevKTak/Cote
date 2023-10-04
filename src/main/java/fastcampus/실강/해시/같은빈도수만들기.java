@@ -20,7 +20,7 @@ public class 같은빈도수만들기 {
 		String abcde = "abcde";
 
 		for (char c : abcde.toCharArray()) {
-			map.putIfAbsent(c, 0);
+			map.putIfAbsent(c, 0); // c 키값이 존재하지 않거나, null일 경우에만 삽입
 		}
 
 		// for (char key : map.keySet()) {

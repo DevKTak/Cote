@@ -1,6 +1,6 @@
 package list;
 
-import fastcampus.리스트.MyDoubleLinkedList;
+import fastcampus.인강.리스트.MyDoubleLinkedList;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;

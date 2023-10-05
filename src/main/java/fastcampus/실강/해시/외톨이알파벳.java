@@ -17,7 +17,6 @@ public class 외톨이알파벳 {
 		for (char c : input_string.toCharArray()) {
 			map.put(c, map.getOrDefault(c, 0) + 1);
 		}
-
 		for (int i = 0; i < input_string.length(); i++) {
 			char c = input_string.charAt(i);
 			int cnt = map.get(c);

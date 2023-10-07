@@ -16,18 +16,20 @@ public class 성격유형검사하기 {
 
 		for (int i = 0; i < survey.length; i++) {
 			String[] split = survey[i].split("");
+			String frontChar = split[0];
+			String rearChar = split[1];
 			int score = Math.abs(choices[i] - 4);
 
-			if (choices[i] > 4) {
-				map.put(split[0], map.getOrDefault(split[0], 0) + score);
+			if (choices[i] < 4) {
+				map.put(frontChar, map.getOrDefault(frontChar, 0) + score);
 			} else {
-				map.put(split[1], map.getOrDefault(split[1], 0) + score);
+				map.put(rearChar, map.getOrDefault(rearChar, 0) + score);
 			}
 		}
 		sb.append(map.getOrDefault("R", 0) >= map.getOrDefault("T", 0) ? "R" : "T");
-		sb.append(map.getOrDefault("C", 0) >= map.getOrDefault("T", 0) ? "C" : "F");
-		sb.append(map.getOrDefault("J", 0) >= map.getOrDefault("T", 0) ? "J" : "M");
-		sb.append(map.getOrDefault("A", 0) >= map.getOrDefault("T", 0) ? "A" : "N");
+		sb.append(map.getOrDefault("C", 0) >= map.getOrDefault("F", 0) ? "C" : "F");
+		sb.append(map.getOrDefault("J", 0) >= map.getOrDefault("M", 0) ? "J" : "M");
+		sb.append(map.getOrDefault("A", 0) >= map.getOrDefault("N", 0) ? "A" : "N");
 
 		return sb.toString();
 	}

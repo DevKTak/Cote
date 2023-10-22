@@ -1,5 +1,6 @@
 package cote.셀러비;
 
+// 슬라이딩 윈도우
 public class Solution1 {
 
 	public static void main(String[] args) {

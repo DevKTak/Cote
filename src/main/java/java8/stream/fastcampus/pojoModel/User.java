@@ -1,12 +1,15 @@
 package java8.stream.fastcampus.pojoModel;
 
+import java.time.LocalDateTime;
 import java.util.List;
+import java.util.Optional;
 
 public class User {
 	private int id;
 	private String name;
 	private String emailAddress;
 	private boolean isVerified;
+	private LocalDateTime createdAt;
 	private List<Integer> friendUserIds;
 
 	public int getId() {
@@ -27,8 +30,8 @@ public class User {
 		return this;
 	}
 
-	public String getEmailAddress() {
-		return emailAddress;
+	public Optional<String> getEmailAddress() {
+		return Optional.ofNullable(emailAddress);
 	}
 
 	public User setEmailAddress(String emailAddress) {
@@ -42,6 +45,15 @@ public class User {
 
 	public User setVerified(boolean isVerified) {
 		this.isVerified = isVerified;
+		return this;
+	}
+
+	public LocalDateTime getCreatedAt() {
+		return createdAt;
+	}
+
+	public User setCreatedAt(LocalDateTime createdAt) {
+		this.createdAt = createdAt;
 		return this;
 	}
 

@@ -1,4 +1,4 @@
-package java8.stream.fastcampus;
+package java8.stream.fastcampus.stream;
 
 import java.util.Arrays;
 import java.util.List;

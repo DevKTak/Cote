@@ -2,6 +2,7 @@ package java8.stream.fastcampus.advanced;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.function.Consumer;
 import java.util.stream.IntStream;
 
 import java8.stream.fastcampus.pojoModel.User;
@@ -11,7 +12,13 @@ public class ForEach {
 
 	public static void main(String[] args) {
 		List<Integer> numbers = Arrays.asList(3, 5, 2, 1);
-		numbers.stream().forEach(number -> System.out.println("The number is " + number));
+		Consumer<Integer> numberConsumer = new Consumer<>() {
+			@Override
+			public void accept(Integer number) {
+				System.out.println("The number is " + number);
+			}
+		};
+		numbers.stream().forEach(numberConsumer);
 		numbers.forEach(number -> System.out.println("The number is " + number));
 
 		User user1 = new User()

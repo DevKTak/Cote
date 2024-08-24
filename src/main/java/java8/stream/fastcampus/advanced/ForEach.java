@@ -19,6 +19,8 @@ public class ForEach {
 			}
 		};
 		numbers.stream().forEach(numberConsumer);
+
+		// Refactoring
 		numbers.forEach(number -> System.out.println("The number is " + number));
 
 		User user1 = new User()
@@ -41,7 +43,7 @@ public class ForEach {
 		EmailService emailService = new EmailService();
 		users.stream()
 			.filter(user -> !user.isVerified())
-			.forEach(emailService::sendVerifyYourEmailEmail);
+			.forEach(emailService::sendVerifyYourEmail);
 
 		for (int i = 0; i < users.size(); i++) {
 			User user = users.get(i);

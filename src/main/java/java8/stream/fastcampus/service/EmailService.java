@@ -14,7 +14,7 @@ public class EmailService {
 			System.out.println("Sending 'Make More Friends' email to " + email));
 	}
 
-	public void sendVerifyYourEmailEmail(User user) {
+	public void sendVerifyYourEmail(User user) {
 		user.getEmailAddress().ifPresent(email ->
 			System.out.println("Sending 'Verify Your Email' email to " + email));
 	}

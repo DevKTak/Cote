@@ -17,7 +17,8 @@ public class MaxMinCount {
 
 	public static void main(String[] args) {
 		Optional<Integer> max = Stream.of(5, 3, 6, 2, 1)
-			.max(Integer::compareTo);
+			.max(Comparator.naturalOrder());
+		// .max(Integer::compareTo);
 		System.out.println(max.get());
 
 		User user1 = new User()
@@ -37,6 +38,7 @@ public class MaxMinCount {
 			.setEmailAddress("charlie@fastcampus.co.kr");
 		List<User> users = Arrays.asList(user1, user2, user3);
 
+		// name 기준 오름차훈으로 가장 앞에 있는 유저 뽑아내기
 		User firstUser = users.stream()
 			.min(Comparator.comparing(User::getName))
 			// .min((u1, u2) -> u1.getName().compareTo(u2.getName()))
@@ -60,11 +62,11 @@ public class MaxMinCount {
 			.setCreatedAt(now.minusHours(27));
 		users = Arrays.asList(user1, user2, user3, user4);
 
-		long unverfiedUsersIn24Hrs = users.stream()
-			.filter(user -> user.getCreatedAt().isAfter(now.minusDays(1)))
-			.filter(user -> !user.isVerified())
+		long unverifiedUsersIn24Hrs = users.stream()
+			.filter(user -> user.getCreatedAt().isAfter(now.minusDays(1))) // 최근 1시간 이내
+			.filter(user -> !user.isVerified()) // 인증되지 않은
 			.count();
-		System.out.println(unverfiedUsersIn24Hrs);
+		System.out.println(unverifiedUsersIn24Hrs);
 
 		Order order1 = new Order()
 			.setId(1001L)
@@ -85,13 +87,14 @@ public class MaxMinCount {
 		List<Order> orders = Arrays.asList(order1, order2, order3, order4);
 
 		// TODO: find order with highest amount an in ERROR status
+		// 에러상태면서 금액이 가장 높은 주문
 		Order erroredOrderWithMaxAmount = orders.stream()
 			.filter(order -> order.getStatus() == OrderStatus.ERROR)
 			// .max((o1, o2) -> o1.getAmount().compareTo(o2.getAmount()))
 			.max(Comparator.comparing(Order::getAmount))
 			.get();
 
-		// 단순히 에러상태중에서 가장 큰 금액 구하라면
+		// 주문이 아니고 단순히 에러상태중에서 가장 큰 금액을 구하라면
 		BigDecimal maxErroredAmount = orders.stream()
 			.filter(order -> order.getStatus() == OrderStatus.ERROR)
 			.map(order -> order.getAmount())

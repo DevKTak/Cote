@@ -12,12 +12,16 @@ import java8.stream.fastcampus.pojoModel.Order;
 import java8.stream.fastcampus.pojoModel.Order.OrderStatus;
 import java8.stream.fastcampus.pojoModel.User;
 
+/**
+ * 엔티티나 리스트 따위를 Map 의 형태로 변환시킬때 활용!
+ */
 public class ToMap {
 
 	public static void main(String[] args) {
 		Map<Integer, String> numberMap = Stream.of(3, 5, -4, 2, 6)
 			// .collect(Collectors.toMap(x -> x, x -> "Number is " + x));
-			.collect(Collectors.toMap(Function.identity(), x -> "Number is " + x));
+			.collect(Collectors.toMap(Function.identity(), x -> "Number is " + x)); // key, value
+		System.out.println("numberMap = " + numberMap);
 		System.out.println(numberMap.get(3));
 
 		User user1 = new User()
@@ -37,10 +41,10 @@ public class ToMap {
 			.setEmailAddress("charlie@fastcampus.co.kr");
 		List<User> users = Arrays.asList(user1, user2, user3);
 
-		// 실무에서 자주 활용!
+		// 실무에서 자주 활용!!!!!
 		Map<Integer, User> userIdToUserMap = users.stream()
 			.collect(Collectors.toMap(User::getId, Function.identity()));
-		System.out.println(userIdToUserMap);
+		System.out.println("userIdToUserMap = " + userIdToUserMap);
 		System.out.println(userIdToUserMap.get(103));
 
 		Order order1 = new Order()

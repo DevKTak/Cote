@@ -50,6 +50,7 @@ public class GroupingBy {
 			.collect(Collectors.groupingBy(Order::getStatus));
 		System.out.println("orderStatusMap = " + orderStatusMap);
 
+		// OrderStatus 별 주문상품금액의 합계
 		Map<OrderStatus, BigDecimal> orderStatusToSumOfAmountMap = orders.stream()
 			.collect(Collectors.groupingBy(Order::getStatus,
 				Collectors.mapping(Order::getAmount,

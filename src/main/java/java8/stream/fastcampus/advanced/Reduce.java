@@ -3,6 +3,8 @@ package java8.stream.fastcampus.advanced;
 import java.math.BigDecimal;
 import java.util.Arrays;
 import java.util.List;
+import java.util.stream.IntStream;
+import java.util.stream.Stream;
 
 import java8.stream.fastcampus.pojoModel.Order;
 import java8.stream.fastcampus.pojoModel.OrderLine;
@@ -37,15 +39,19 @@ public class Reduce {
 			.reduce(0, (x, y) -> x + y);
 		System.out.println(sumOfNumberStrList);
 
-		// mapToInt를 활용하여 int에 특화된 메서드 sum() 을 사용해서 푸는법
-		int sumOfNumberStrList1_1 = numberStrList.stream()
-			.mapToInt(Integer::parseInt).sum();
+		// mapToInt 를 활용하여 int 에 특화된 메서드 sum() 을 사용해서 푸는법
+		// map 으로하면 Stream<Integer> mpaToInt 로 하면 IntStream 이 나옴
+		Stream<Integer> integerStream = numberStrList.stream().map(Integer::parseInt);
+		IntStream intStream = numberStrList.stream()
+			.mapToInt(Integer::parseInt);
+		int sumOfNumberStrList1_1 = intStream.sum();
 		System.out.println("sumOfNumberStrList1_1 = " + sumOfNumberStrList1_1);
 
 		// 자주 쓰지 않는 방법 (이렇게도 쓴다정도)
 		int sumOfNumberStrList2 = numberStrList.stream()
 			.reduce(0, (number, str) -> number + Integer.parseInt(str), (num1, num2) -> num1 + num2);
 		System.out.println(sumOfNumberStrList2);
+		// ------------------------------------
 
 		User user1 = new User()
 			.setId(101)
@@ -61,7 +67,6 @@ public class Reduce {
 			.setFriendUserIds(Arrays.asList(204, 205, 207));
 		List<User> users = Arrays.asList(user1, user2, user3);
 
-
 		int sumOfNumberOfFriends = users.stream()
 			.map(User::getFriendUserIds)
 			.map(List::size)
@@ -72,7 +77,7 @@ public class Reduce {
 		// 	.map(User::getFriendUserIds)
 		// 	.mapToInt(List::size)
 		// 		.sum();
-		System.out.println(sumOfNumberOfFriends);
+		System.out.println("sumOfNumberOfFriends = " + sumOfNumberOfFriends);
 
 		Order order1 = new Order()
 			.setId(1001L)
@@ -94,6 +99,13 @@ public class Reduce {
 
 		// TODO: find the sum of amounts
 		// 오더라인들의 가격의 총 합
+		int sum1 = orders.stream()
+			.map(order -> order.getOrderLines()) // Stream<List<OrderLine>>
+			.flatMap(orderLines -> orderLines.stream()) // Stream<OrderLine>
+			.mapToInt(orderLine -> Integer.parseInt(orderLine.getAmount().toString())) // Stream<BigDecimal>
+			.sum();
+		System.out.println("sum1 = " + sum1);
+
 		BigDecimal sumOfAmounts = orders.stream()
 			.map(Order::getOrderLines) // Stream<List<OrderLine>>
 			.flatMap(orderLines -> orderLines.stream()) // 오더라인들을 평평하게해서 스트림으로 만듬 Stream<OrderLine>
